@@ -8,6 +8,10 @@ namespace s21 {
         Loader() = default;
         void LoadFromFile(const std::string& filename);
         void ParseFace(std::istringstream& stream);
+        std::vector<Vector3> GetVerticies() const;
+        std::vector<Vector2> GetTexturesCoords() const;
+        std::vector<Vector3> GetNormals() const;
+        std::vector<FaceVertex> GetFaces() const;
         void PrintLoadedInfo();
     private:
         Model model;

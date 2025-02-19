@@ -2,24 +2,8 @@
 
 #include <fstream>
 #include <vector>
-
+#include "transformations/transformation.h"
 namespace s21 {
-    struct Vector2 {
-        Vector2() : x(0.0f), y(0.0f) {}
-        Vector2(int x_, int y_) : x(x_), y(y_) {}
-        Vector2(const Vector2& other) : x(other.x), y(other.y) {}
-        float x, y;
-    };
-
-   
-
-    struct Vector3 {
-        Vector3() : x(0.0f), y(0.0f), z(0.0f) {}
-        Vector3(int x_, int y_, int z_) : x(x_), y(y_), z(z_) {}
-        Vector3(const Vector3& other) : x(other.x), y(other.y), z(other.z) {}
-        float x, y, z;
-    };
-
     struct Vertex {
         Vector3 position;
         Vector3 normal;

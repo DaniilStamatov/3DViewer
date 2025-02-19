@@ -74,6 +74,12 @@
         "cinttypes": "cpp",
         "typeinfo": "cpp",
         "valarray": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "qopenglfunctions": "cpp",
+        "qopenglwidget": "cpp",
+        "expected": "cpp",
+        "qopenglextrafunctions": "cpp",
+        "qopenglshaderprogram": "cpp",
+        "qwidget": "cpp"
     }
 }

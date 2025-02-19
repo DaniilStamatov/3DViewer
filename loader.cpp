@@ -55,6 +55,26 @@ void s21::Loader::ParseFace(std::istringstream& stream) {
     }
 }
 
+std::vector<s21::Vector3> s21::Loader::GetVerticies() const
+{
+    return m_verticies;
+}
+
+std::vector<s21::Vector2> s21::Loader::GetTexturesCoords() const
+{
+    return m_texCoords;
+}
+
+std::vector<s21::Vector3> s21::Loader::GetNormals() const
+{
+    return m_normals;
+}
+
+std::vector<s21::FaceVertex> s21::Loader::GetFaces() const
+{
+    return m_faceVerticies;
+}
+
 void s21::Loader::PrintLoadedInfo()
 {
     std::cout << "Loaded Vertices: " << m_verticies.size() << std::endl;
