@@ -18,6 +18,7 @@ set(PROJECT_SOURCES
     UI/OpenGLWindow.h
     UI/MainWindow.h
     UI/MainWindow.cpp
+    UI/ArrowButton.h
     main.cpp
     loader.cpp
     model.h

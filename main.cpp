@@ -1,16 +1,17 @@
-#include <QApplication>
 #include "UI/MainWindow.h"
-
+#include <QApplication>
+#include <QFontDatabase>
 int main(int argc, char *argv[]) {
-    QApplication app(argc, argv);
 
-    MainWindow window;
+  QApplication app(argc, argv);
+  QFont globalFont("SourceCodeVF", 11);
+  QApplication::setFont(globalFont);
+  MainWindow window;
 
-    window.resize(800, 600);
-    window.setWindowTitle("OpenGL Model Loader");
+  window.resize(800, 600);
+  window.setWindowTitle("OpenGL Model Loader");
+  window.LoadModel("cube.obj");
 
-    window.LoadModel("cube.obj");
-
-    window.show();
-    return app.exec();
+  window.show();
+  return app.exec();
 }

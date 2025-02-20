@@ -455,6 +455,12 @@
 	"HEADERS" : 
 	[
 		[
+			"/home/daniil/Documents/3DViewer/src/UI/ArrowButton.h",
+			"Mu",
+			"KRKR4BN5RM/moc_ArrowButton.cpp",
+			null
+		],
+		[
 			"/home/daniil/Documents/3DViewer/src/UI/MainWindow.h",
 			"Mu",
 			"KRKR4BN5RM/moc_MainWindow.cpp",
