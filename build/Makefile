@@ -203,6 +203,30 @@ UI/MainWindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/UI/MainWindow.cpp.s
 .PHONY : UI/MainWindow.cpp.s
 
+UI/ModelRenderer.o: UI/ModelRenderer.cpp.o
+.PHONY : UI/ModelRenderer.o
+
+# target to build an object file
+UI/ModelRenderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/UI/ModelRenderer.cpp.o
+.PHONY : UI/ModelRenderer.cpp.o
+
+UI/ModelRenderer.i: UI/ModelRenderer.cpp.i
+.PHONY : UI/ModelRenderer.i
+
+# target to preprocess a source file
+UI/ModelRenderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/UI/ModelRenderer.cpp.i
+.PHONY : UI/ModelRenderer.cpp.i
+
+UI/ModelRenderer.s: UI/ModelRenderer.cpp.s
+.PHONY : UI/ModelRenderer.s
+
+# target to generate assembly for a file
+UI/ModelRenderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/UI/ModelRenderer.cpp.s
+.PHONY : UI/ModelRenderer.cpp.s
+
 UI/OpenGLWindow.o: UI/OpenGLWindow.cpp.o
 .PHONY : UI/OpenGLWindow.o
 
@@ -340,6 +364,9 @@ help:
 	@echo "... UI/MainWindow.o"
 	@echo "... UI/MainWindow.i"
 	@echo "... UI/MainWindow.s"
+	@echo "... UI/ModelRenderer.o"
+	@echo "... UI/ModelRenderer.i"
+	@echo "... UI/ModelRenderer.s"
 	@echo "... UI/OpenGLWindow.o"
 	@echo "... UI/OpenGLWindow.i"
 	@echo "... UI/OpenGLWindow.s"

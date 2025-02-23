@@ -41,10 +41,14 @@ void s21::Loader::ParseFace(std::istringstream &stream) {
     faceVertex.vertexIndex = std::stoi(token.substr(0, firstSlash)) - 1;
     if (firstSlash != std::string::npos) {
       if (secondSlash != std::string::npos) {
-        faceVertex.textureIndex =
-            std::stoi(
-                token.substr(firstSlash + 1, secondSlash - firstSlash - 1)) -
-            1;
+        std::string tex =
+            token.substr(firstSlash + 1, secondSlash - firstSlash - 1);
+        if (tex != "") {
+          faceVertex.textureIndex = std::stoi(tex) - 1;
+        } else {
+          faceVertex.textureIndex = -1;
+        }
+
         faceVertex.normalIndex = std::stoi(token.substr(secondSlash + 1)) - 1;
       } else {
         faceVertex.textureIndex = std::stoi(token.substr(firstSlash + 1)) - 1;
@@ -98,4 +102,12 @@ void s21::Loader::PrintLoadedInfo() {
               << ", Texture Index: " << face.textureIndex
               << ", Normal Index: " << face.normalIndex << std::endl;
   }
+}
+
+void s21::Loader::Clear()
+{
+  m_verticies.clear();
+  m_normals.clear();
+  m_texCoords.clear();
+  m_faceVerticies.clear();
 }

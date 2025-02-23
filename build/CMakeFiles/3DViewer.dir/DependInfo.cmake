@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "" "3DViewer_autogen/timestamp" "custom" "3DViewer_autogen/deps"
   "/home/daniil/Documents/3DViewer/src/build/3DViewer_autogen/mocs_compilation.cpp" "CMakeFiles/3DViewer.dir/3DViewer_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/3DViewer.dir/3DViewer_autogen/mocs_compilation.cpp.o.d"
   "/home/daniil/Documents/3DViewer/src/UI/MainWindow.cpp" "CMakeFiles/3DViewer.dir/UI/MainWindow.cpp.o" "gcc" "CMakeFiles/3DViewer.dir/UI/MainWindow.cpp.o.d"
+  "/home/daniil/Documents/3DViewer/src/UI/ModelRenderer.cpp" "CMakeFiles/3DViewer.dir/UI/ModelRenderer.cpp.o" "gcc" "CMakeFiles/3DViewer.dir/UI/ModelRenderer.cpp.o.d"
   "/home/daniil/Documents/3DViewer/src/UI/OpenGLWindow.cpp" "CMakeFiles/3DViewer.dir/UI/OpenGLWindow.cpp.o" "gcc" "CMakeFiles/3DViewer.dir/UI/OpenGLWindow.cpp.o.d"
   "/home/daniil/Documents/3DViewer/src/loader.cpp" "CMakeFiles/3DViewer.dir/loader.cpp.o" "gcc" "CMakeFiles/3DViewer.dir/loader.cpp.o.d"
   "/home/daniil/Documents/3DViewer/src/main.cpp" "CMakeFiles/3DViewer.dir/main.cpp.o" "gcc" "CMakeFiles/3DViewer.dir/main.cpp.o.d"

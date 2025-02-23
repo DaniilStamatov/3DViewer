@@ -69,7 +69,7 @@ void Shader::Bind() {
   m_functions->glUseProgram(m_rendererID);
   GLenum error = m_functions->glGetError();
   if (error != GL_NO_ERROR) {
-    std::cerr << "OpenGL error occurred: " << error << std::endl;
+    std::cerr << "OpenGL shader error occurred: " << error << std::endl;
   }
 }
 
@@ -81,6 +81,9 @@ void Shader::SetUniformMat4f(const std::string &name,
                                   mat.GetData());
 }
 
+void Shader::SetUniform3f(const std::string &name, const s21::Vector3 &vec) {
+  m_functions->glUniform3f(GetUniformLocation(name), vec.x, vec.y, vec.z);
+}
 int Shader::GetUniformLocation(const std::string &name) {
   if (m_UniformLocationCashe.find(name) != m_UniformLocationCashe.end())
     return m_UniformLocationCashe[name];

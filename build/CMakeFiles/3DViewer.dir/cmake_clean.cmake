@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/3DViewer.dir/3DViewer_autogen/mocs_compilation.cpp.o.d"
   "CMakeFiles/3DViewer.dir/UI/MainWindow.cpp.o"
   "CMakeFiles/3DViewer.dir/UI/MainWindow.cpp.o.d"
+  "CMakeFiles/3DViewer.dir/UI/ModelRenderer.cpp.o"
+  "CMakeFiles/3DViewer.dir/UI/ModelRenderer.cpp.o.d"
   "CMakeFiles/3DViewer.dir/UI/OpenGLWindow.cpp.o"
   "CMakeFiles/3DViewer.dir/UI/OpenGLWindow.cpp.o.d"
   "CMakeFiles/3DViewer.dir/loader.cpp.o"

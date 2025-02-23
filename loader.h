@@ -13,7 +13,7 @@ public:
   std::vector<Vector3> GetNormals() const;
   std::vector<FaceVertex> GetFaces() const;
   void PrintLoadedInfo();
-
+  void Clear();
 private:
   Model model;
   std::vector<Vector3> m_verticies;

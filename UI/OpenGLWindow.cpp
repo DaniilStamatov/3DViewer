@@ -5,74 +5,80 @@ OpenGLWindow::OpenGLWindow(QWidget *parent) : QOpenGLWidget(parent) {
   QTimer *timer = new QTimer(this);
   connect(timer, &QTimer::timeout, this, &OpenGLWindow::updateAngle);
   timer->start(16);
-  transform = s21::Matrix4x4();
+}
+
+OpenGLWindow::~OpenGLWindow()
+{
+
+}
+
+void OpenGLWindow::ChangeCurrentModel()
+{
+  m_currentModelIndex = (m_currentModelIndex + 1) % m_models.size();
+  std::cout << m_currentModelIndex << std::endl;
+  m_currentModel = m_models[m_currentModelIndex];
 }
 
 void OpenGLWindow::loadModel(const std::string &filename) {
+  if (!QOpenGLContext::currentContext()) {
+    std::cerr << "OpenGL context is not current!" << std::endl;
+  }
+  makeCurrent();
+  m_loader.Clear();
   m_loader.LoadFromFile(filename);
-  update();
+  modelLoaded = false;
+  functions = QOpenGLContext::currentContext()->extraFunctions();
+  m_models.push_back(std::make_shared<ModelRenderer>(functions, m_loader));
+  m_currentModelIndex = m_models.size() - 1;
+  m_currentModel = m_models[m_currentModelIndex];
+  modelLoaded = true; 
 }
 
 void OpenGLWindow::SetObjectPosition(float x, float y, float z) {
-  positionMatrix = s21::Translate(s21::Matrix4x4(), s21::Vector3(x, y, z));
+  m_currentModel.get()->SetObjectPosition(x, y, z);
 }
 
 void OpenGLWindow::SetObjectRotation(float x, float y, float z) {
-  rotationMatrix = s21::Matrix4x4();
-  rotationMatrix = s21::Rotate(rotationMatrix, fmod(z * (M_PI / 180.0), 360),
-                               s21::Vector3(0, 0, 1));
-  rotationMatrix = s21::Rotate(rotationMatrix, fmod(y * (M_PI / 180.0), 360),
-                               s21::Vector3(0, 1, 0));
-  rotationMatrix = s21::Rotate(rotationMatrix, fmod(x * (M_PI / 180.0), 360),
-                               s21::Vector3(1, 0, 0));
+  m_currentModel.get()->SetObjectRotation(x, y, z);
 }
 
 void OpenGLWindow::SetObjectScale(float x, float y, float z) {
-  scaleMatrix = s21::Matrix4x4();
-  scaleMatrix = s21::Scale(scaleMatrix, s21::Vector3(x, y, z));
+  m_currentModel.get()->SetObjectScale(x, y, z);
+}
+
+void OpenGLWindow::SetLinesColor(float x, float y, float z) {
+  m_currentModel.get()->SetLinesColor(x, y, z);
 }
 
 void OpenGLWindow::initializeGL() {
-  initializeOpenGLFunctions();
-  glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-  QOpenGLExtraFunctions *functions = new QOpenGLExtraFunctions(this->context());
-  m_shader = new Shader(functions, "shaders/basic.shader");
-  glGenVertexArrays(1, &m_vao);
-  glGenBuffers(1, &m_vbo);
-  glGenBuffers(1, &m_ebo);
-  glBindVertexArray(m_vao);
-  glBindBuffer(GL_ARRAY_BUFFER, m_vbo);
-  glBufferData(GL_ARRAY_BUFFER,
-               m_loader.GetVerticies().size() * sizeof(s21::Vector3),
-               m_loader.GetVerticies().data(), GL_STATIC_DRAW);
-  std::vector<unsigned int> indices;
-  for (const auto &face : m_loader.GetFaces()) {
-    indices.push_back(face.vertexIndex);
-  }
-  glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_ebo);
-  glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned int),
-               &indices[0], GL_STATIC_DRAW);
-  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(s21::Vector3),
-                        (void *)0);
-  glEnableVertexAttribArray(0);
-  glBindVertexArray(0);
+  functions = QOpenGLContext::currentContext()->extraFunctions();
+  functions->initializeOpenGLFunctions();
+  this->makeCurrent();
+  functions->glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+  loadModel("Meshes/Male.OBJ");
+  loadModel("Meshes/Chairs.obj");
+  m_currentModelIndex = m_models.size() - 1;
+  m_currentModel = m_models[m_currentModelIndex];
+  functions->glEnableVertexAttribArray(0);
+  functions->glBindVertexArray(0);
 }
 
 void OpenGLWindow::resizeGL(int w, int h) { glViewport(0, 0, w, h); }
 
 void OpenGLWindow::paintGL() {
-  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-  glBindVertexArray(m_vao);
-  glLineWidth(3.0f);
-  transform = scaleMatrix * rotationMatrix * positionMatrix;
-  m_shader->Bind();
-  m_shader->SetUniformMat4f("mvp", transform);
-  GLenum error = glGetError();
-  if (error != GL_NO_ERROR) {
-    std::cerr << "OpenGL error occurred: " << error << std::endl;
-  }
-  glDrawElements(GL_LINES, m_loader.GetFaces().size() * 3, GL_UNSIGNED_INT,
-                 nullptr);
+  makeCurrent();
+  functions = QOpenGLContext::currentContext()->extraFunctions();
+  functions->glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-  glBindVertexArray(0);
+  if(modelLoaded) {
+    functions->glLineWidth(1.0f);
+    for(size_t i = 0; i < m_models.size(); i++) {
+       m_models[i]->Draw();
+    }
+    GLenum error = glGetError();
+    if(error != GL_NO_ERROR) {
+        std::cout << "error here" << std::endl;
+    }
+  }
+  functions->glBindVertexArray(0);
 }

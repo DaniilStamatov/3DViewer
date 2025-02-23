@@ -8,9 +8,9 @@ int main(int argc, char *argv[]) {
   QApplication::setFont(globalFont);
   MainWindow window;
 
-  window.resize(800, 600);
+  window.resize(1920, 1080);
   window.setWindowTitle("OpenGL Model Loader");
-  window.LoadModel("cube.obj");
+  //window.LoadModel("Meshes/cube.obj");
 
   window.show();
   return app.exec();

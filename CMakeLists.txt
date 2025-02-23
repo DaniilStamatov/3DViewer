@@ -19,6 +19,8 @@ set(PROJECT_SOURCES
     UI/MainWindow.h
     UI/MainWindow.cpp
     UI/ArrowButton.h
+    UI/ModelRenderer.h
+    UI/ModelRenderer.cpp
     main.cpp
     loader.cpp
     model.h

@@ -1,11 +1,12 @@
 #pragma once
 #include "ArrowButton.h"
 #include "OpenGLWindow.h"
+#include <QColorDialog>
 #include <QLabel>
 #include <QLineEdit>
 #include <QMainWindow>
 #include <QPushButton>
-
+#include <QFileDialog>
 class MainWindow : public QMainWindow {
 public:
   MainWindow(QWidget *parent = nullptr);
@@ -14,6 +15,7 @@ public:
   QHBoxLayout *CreateTransformLayout();
   QHBoxLayout *CreateScaleLayout();
   QWidget *CreateButtonPanel();
+  QLineEdit* CreateLineEdit(const QString &placeholder);
 private slots:
   void onXUpButtonClicked();
   void onXDownButtonClicked();
@@ -38,6 +40,9 @@ private slots:
   void onCoordinateEntered();
   void onRotationEntered();
   void onScaleEntered();
+  void onColorChanged();
+  void onLoadModelClicked();
+  void keyPressEvent(QKeyEvent *event);
   QVBoxLayout *createArrowButtons(const QString &iconPath,
                                   void (MainWindow::*upSlot)(),
                                   void (MainWindow::*downSlot)());

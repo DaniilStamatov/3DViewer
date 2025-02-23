@@ -80,6 +80,7 @@
         "expected": "cpp",
         "qopenglextrafunctions": "cpp",
         "qopenglshaderprogram": "cpp",
-        "qwidget": "cpp"
+        "qwidget": "cpp",
+        "qtimer": "cpp"
     }
 }

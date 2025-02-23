@@ -1,28 +1,54 @@
 #include "MainWindow.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
+
   QWidget *centralWidget = new QWidget(this);
   setCentralWidget(centralWidget);
   QHBoxLayout *layout = new QHBoxLayout(centralWidget);
 
   m_glWidget = new OpenGLWindow(this);
   layout->addWidget(m_glWidget);
-
+ 
   QWidget *buttonPanel = CreateButtonPanel();
   layout->addWidget(buttonPanel);
+  setFocusPolicy(Qt::StrongFocus);
+}
+
+void MainWindow::keyPressEvent(QKeyEvent *event) {
+    if (event->key() == Qt::Key_Up) {
+        m_glWidget->ChangeCurrentModel();
+    }
+    QMainWindow::keyPressEvent(event);
 }
 
 QWidget *MainWindow::CreateButtonPanel() {
   QWidget *buttonPanel = new QWidget(this);
   QVBoxLayout *settingsLayout = new QVBoxLayout(buttonPanel);
+  QFrame *frame = new QFrame();
+  frame->setFrameShape(QFrame::Box);
+  frame->setLineWidth(2);
+  frame->setStyleSheet("background-color:rgb(24, 24, 24);  border-radius: 3px;");
+  QVBoxLayout *frameLayout = new QVBoxLayout(frame);
+  frameLayout->addWidget(new QLabel("Transform", this));
+  frameLayout->addLayout(CreateTransformLayout());
+  frameLayout->addLayout(CreateRotationLayout());
+  frameLayout->addLayout(CreateScaleLayout());
+  settingsLayout->addWidget(frame);
 
-  settingsLayout->addWidget(new QLabel("Transform", this));
-  settingsLayout->addLayout(CreateTransformLayout());
-  settingsLayout->addLayout(CreateRotationLayout());
-  settingsLayout->addLayout(CreateScaleLayout());
+  settingsLayout->addWidget(new QLabel("Color", this));
+  QPushButton *colorButton = new QPushButton();
+  colorButton->setStyleSheet("background-color:rgb(67, 78, 68); color: white; font-size: 16px;");
+  colorButton->setText("Change Color");
+  settingsLayout->addWidget(colorButton);
   QSpacerItem *spacer =
       new QSpacerItem(20, 200, QSizePolicy::Minimum, QSizePolicy::Expanding);
   settingsLayout->addItem(spacer);
+  QPushButton *loadButton = new QPushButton();
+  settingsLayout->addWidget(loadButton);
+connect(loadButton, &QPushButton::clicked, this,
+          &MainWindow::onLoadModelClicked);
+  connect(colorButton, &QPushButton::clicked, this,
+          &MainWindow::onColorChanged);
 
   buttonPanel->setMaximumWidth(300);
   return buttonPanel;
@@ -57,25 +83,18 @@ QHBoxLayout *MainWindow::CreateTransformLayout() {
       &MainWindow::onXDownButtonClicked));
   transformLayout->addSpacerItem(
       new QSpacerItem(30, 20, QSizePolicy::Expanding, QSizePolicy::Minimum));
-  xCoordInput = new QLineEdit(this);
-  xCoordInput->setPlaceholderText("X");
-  xCoordInput->setMaximumWidth(100);
+  xCoordInput = CreateLineEdit("X");
   transformLayout->addWidget(xCoordInput);
-
   transformLayout->addLayout(createArrowButtons(
       "res/images/arrow.png", &MainWindow::onYUpButtonClicked,
       &MainWindow::onYDownButtonClicked));
-  yCoordInput = new QLineEdit(this);
-  yCoordInput->setPlaceholderText("Y");
-  yCoordInput->setMaximumWidth(100);
+  yCoordInput = CreateLineEdit("Y");
   transformLayout->addWidget(yCoordInput);
-
   transformLayout->addLayout(createArrowButtons(
       "res/images/arrow.png", &MainWindow::onZUpButtonClicked,
       &MainWindow::onZDownButtonClicked));
-  zCoordInput = new QLineEdit(this);
-  zCoordInput->setPlaceholderText("Z");
-  zCoordInput->setMaximumWidth(100);
+  zCoordInput = CreateLineEdit("Z");
+
   transformLayout->addWidget(zCoordInput);
 
   connect(xCoordInput, &QLineEdit::returnPressed, this,
@@ -94,23 +113,21 @@ QHBoxLayout *MainWindow::CreateRotationLayout() {
   rotationLayout->addLayout(createArrowButtons(
       "res/images/arrow.png", &MainWindow::onXRotUpButtonClicked,
       &MainWindow::onXRotDownButtonClicked));
-  xRotationInput = new QLineEdit(this);
-  xRotationInput->setPlaceholderText("X");
-  xRotationInput->setMaximumWidth(100);
+  xRotationInput = CreateLineEdit("X");
+
   rotationLayout->addWidget(xRotationInput);
+
   rotationLayout->addLayout(createArrowButtons(
       "res/images/arrow.png", &MainWindow::onYRotUpButtonClicked,
       &MainWindow::onYRotDownButtonClicked));
-  yRotationInput = new QLineEdit(this);
-  yRotationInput->setPlaceholderText("Y");
-  yRotationInput->setMaximumWidth(100);
+  yRotationInput = CreateLineEdit("Y");
+
   rotationLayout->addWidget(yRotationInput);
   rotationLayout->addLayout(createArrowButtons(
       "res/images/arrow.png", &MainWindow::onZRotUpButtonClicked,
       &MainWindow::onZRotDownButtonClicked));
-  zRotationInput = new QLineEdit(this);
-  zRotationInput->setPlaceholderText("Z");
-  zRotationInput->setMaximumWidth(100);
+  zRotationInput = CreateLineEdit("Z");
+
   rotationLayout->addWidget(zRotationInput);
   connect(xRotationInput, &QLineEdit::returnPressed, this,
           &MainWindow::onRotationEntered);
@@ -125,28 +142,23 @@ QHBoxLayout *MainWindow::CreateRotationLayout() {
 QHBoxLayout *MainWindow::CreateScaleLayout() {
   QHBoxLayout *scaleLayout = new QHBoxLayout();
   scaleLayout->addWidget(new QLabel("Scale", this));
+  scaleLayout->addSpacerItem(
+      new QSpacerItem(80, 20, QSizePolicy::Expanding, QSizePolicy::Minimum));
   scaleLayout->addLayout(createArrowButtons(
       "res/images/arrow.png", &MainWindow::onXScaleUpButtonClicked,
       &MainWindow::onXScaleDownButtonClicked));
-  scaleLayout->addSpacerItem(
-      new QSpacerItem(60, 20, QSizePolicy::Expanding, QSizePolicy::Minimum));
 
-  xScaleInput = new QLineEdit(this);
-  xScaleInput->setPlaceholderText("X");
-  xScaleInput->setMaximumWidth(100);
+  xScaleInput = CreateLineEdit("X");
   scaleLayout->addWidget(xScaleInput);
   scaleLayout->addLayout(createArrowButtons(
       "res/images/arrow.png", &MainWindow::onYScaleUpButtonClicked,
       &MainWindow::onYScaleDownButtonClicked));
-  yScaleInput = new QLineEdit(this);
-  yScaleInput->setPlaceholderText("Y");
-  yScaleInput->setMaximumWidth(100);
+  yScaleInput = CreateLineEdit("Y");
   scaleLayout->addWidget(yScaleInput);
   scaleLayout->addLayout(createArrowButtons(
       "res/images/arrow.png", &MainWindow::onZScaleUpButtonClicked,
       &MainWindow::onZScaleDownButtonClicked));
-  zScaleInput = new QLineEdit(this);
-  zScaleInput->setPlaceholderText("Z");
+  zScaleInput = CreateLineEdit("Z");
   zScaleInput->setMaximumWidth(100);
   scaleLayout->addWidget(zScaleInput);
   connect(xScaleInput, &QLineEdit::returnPressed, this,
@@ -164,6 +176,22 @@ void MainWindow::onCoordinateEntered() { SetObjectPosition(); }
 void MainWindow::onRotationEntered() { SetObjectRotation(); }
 
 void MainWindow::onScaleEntered() { SetObjectScale(); }
+
+void MainWindow::onColorChanged() {
+  QColor color = QColorDialog::getColor(Qt::white, this, "Choose Color");
+  if (color.isValid()) {
+    m_glWidget->SetLinesColor(color.red(), color.green(), color.blue());
+  }
+}
+
+void MainWindow::onLoadModelClicked()
+{
+  QString fileName = QFileDialog::getOpenFileName(this, "Выберите файл", "", "Все файлы (*.*)");
+  if(!fileName.isEmpty()) {
+    m_glWidget->loadModel(fileName.toStdString());
+
+  }
+}
 
 void MainWindow::LoadModel(const std::string &name) {
   m_glWidget->loadModel(name);
@@ -209,6 +237,14 @@ void MainWindow::SetObjectScale() {
   float z = zText.isEmpty() ? 0.0f : zText.toFloat(&okZ);
 
   m_glWidget->SetObjectScale(x, y, z);
+}
+
+QLineEdit* MainWindow::CreateLineEdit(const QString &placeholder) {
+    QLineEdit *lineEdit = new QLineEdit(this);
+    lineEdit->setPlaceholderText(placeholder);
+    lineEdit->setMaximumWidth(100);
+    lineEdit->setStyleSheet("border: 2px solid rgb(73, 77, 73); border-radius: 5px; padding: 2px;");
+    return lineEdit;
 }
 
 void MainWindow::onXUpButtonClicked() { updateCoordinate(xCoordInput, 1); }

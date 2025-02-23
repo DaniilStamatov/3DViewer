@@ -467,6 +467,12 @@
 			null
 		],
 		[
+			"/home/daniil/Documents/3DViewer/src/UI/ModelRenderer.h",
+			"Mu",
+			"KRKR4BN5RM/moc_ModelRenderer.cpp",
+			null
+		],
+		[
 			"/home/daniil/Documents/3DViewer/src/UI/OpenGLWindow.h",
 			"Mu",
 			"KRKR4BN5RM/moc_OpenGLWindow.cpp",
@@ -573,6 +579,11 @@
 	"SOURCES" : 
 	[
 		[ "/home/daniil/Documents/3DViewer/src/UI/MainWindow.cpp", "Mu", null ],
+		[
+			"/home/daniil/Documents/3DViewer/src/UI/ModelRenderer.cpp",
+			"Mu",
+			null
+		],
 		[ "/home/daniil/Documents/3DViewer/src/UI/OpenGLWindow.cpp", "Mu", null ],
 		[ "/home/daniil/Documents/3DViewer/src/loader.cpp", "Mu", null ],
 		[ "/home/daniil/Documents/3DViewer/src/main.cpp", "Mu", null ],

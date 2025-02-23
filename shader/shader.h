@@ -17,7 +17,8 @@ public:
   void Bind();
   void Unbind();
   void SetUniformMat4f(const std::string &name, const s21::Matrix4x4 &mat);
-  void SetUniform1f(const std::string &name, float val);
+  void SetUniform3f(const std::string &name, const s21::Vector3 &vector);
+
   uint GetRendererID() const;
   ~Shader();
 
