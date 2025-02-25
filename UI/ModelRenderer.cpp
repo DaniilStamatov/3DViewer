@@ -37,14 +37,14 @@ ModelRenderer::~ModelRenderer() {
   glDeleteBuffers(1, &m_ebo);
 }
 
-void ModelRenderer::Draw()
+void ModelRenderer::Draw(const s21::Matrix4x4& projection, const s21::Matrix4x4& view)
 {
     m_functions->glBindVertexArray(m_vao);
-    std::cout << m_vao << std::endl;
-    std::cout << m_loader.GetFaces().size() * 3 << std::endl;
     m_transform = m_scaleMatrix * m_rotationMatrix * m_positionMatrix;
     m_shader->Bind();
-    m_shader->SetUniformMat4f("u_mvp", m_transform);
+    m_shader->SetUniformMat4f("u_model", m_transform);
+    m_shader->SetUniformMat4f("u_projection", projection);
+    m_shader->SetUniformMat4f("u_view", view);
     m_shader->SetUniform3f("u_color", m_linesColor);
     m_functions->glDrawElements(GL_TRIANGLES, m_loader.GetFaces().size() * 3, GL_UNSIGNED_INT, nullptr);
     m_functions->glBindVertexArray(0);

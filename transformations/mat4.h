@@ -13,6 +13,17 @@ struct Vector3 {
   Vector3() : x(0.0f), y(0.0f), z(0.0f) {}
   Vector3(float x_, float y_, float z_) : x(x_), y(y_), z(z_) {}
   Vector3(const Vector3 &other) : x(other.x), y(other.y), z(other.z) {}
+  Vector3 cross(const Vector3& other) const {
+      return Vector3(
+          y * other.z - z * other.y,
+          z * other.x - x * other.z,
+          x * other.y - y * other.x
+      );
+  }
+
+  float dot(const Vector3& other) const {
+      return x * other.x + y * other.y + z * other.z;
+  }
   float length() const { return std::sqrt(x * x + y * y + z * z); }
   const float &operator[](int n) const {
     switch (n) {
@@ -82,7 +93,25 @@ inline Vector4 operator+(const Vector4 &vec, const Vector4 &other) {
                  vec.w + other.w);
 }
 
+inline Vector3 operator-(const Vector3 &vec, const Vector3 &other) {
+  return Vector3(vec.x - other.x, vec.y - other.y, vec.z - other.z);
+}
+
+inline Vector3 operator*(const Vector3 &vec, float scalar) {
+  return Vector3(vec.x * scalar, vec.y * scalar, vec.z * scalar);
+}
+
+
+inline Vector3 operator+(const Vector3 &vec, const Vector3 &other) {
+  return Vector3(vec.x + other.x, vec.y + other.y, vec.z + other.z);
+}
+
 inline Vector3 normalize(const Vector3 &vec) {
+  float len = vec.length();
+  return Vector3(vec.x / len, vec.y / len, vec.z / len);
+}
+
+inline Vector3 cross(const Vector3 &vec) {
   float len = vec.length();
   return Vector3(vec.x / len, vec.y / len, vec.z / len);
 }

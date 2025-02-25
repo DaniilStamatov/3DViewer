@@ -11,7 +11,7 @@ public:
     void SetObjectScale(float x, float y, float z);
     void SetLinesColor(float x, float y, float z);
     ~ModelRenderer();
-    void Draw();
+    void Draw(const s21::Matrix4x4& projection, const s21::Matrix4x4& view);
 private:
     QOpenGLExtraFunctions* m_functions;
     s21::Loader m_loader;

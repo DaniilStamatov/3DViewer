@@ -10,7 +10,6 @@ int main(int argc, char *argv[]) {
 
   window.resize(1920, 1080);
   window.setWindowTitle("OpenGL Model Loader");
-  //window.LoadModel("Meshes/cube.obj");
 
   window.show();
   return app.exec();
