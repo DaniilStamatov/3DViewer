@@ -3,9 +3,15 @@
 
 #include <QOpenGLExtraFunctions>
 #include <QOpenGLWidget>
-class ModelRenderer : QOpenGLWidget, QOpenGLExtraFunctions {
+class ModelRenderer : QOpenGLExtraFunctions {
 public:
-    ModelRenderer(QOpenGLExtraFunctions* functions, const s21::Loader& loader);
+    ModelRenderer(const ModelRenderer&) = delete;
+    ModelRenderer& operator=(const ModelRenderer&) = delete;
+
+    // Разрешите перемещение
+    ModelRenderer(ModelRenderer&&) = default;
+    ModelRenderer& operator=(ModelRenderer&&) = default;
+    explicit ModelRenderer(QOpenGLExtraFunctions* functions, const s21::Loader& loader);
     void SetObjectPosition(float x, float y, float z);
     void SetObjectRotation(float x, float y, float z);
     void SetObjectScale(float x, float y, float z);
@@ -20,7 +26,7 @@ private:
     s21::Matrix4x4 m_scaleMatrix;
     s21::Matrix4x4 m_transform;
     s21::Vector3 m_linesColor;
-    Shader *m_shader;
+    Shader m_shader;
 
     unsigned int m_vao;
     unsigned int m_vbo;

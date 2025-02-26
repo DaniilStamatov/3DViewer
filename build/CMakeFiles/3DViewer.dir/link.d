@@ -1,5 +1,5 @@
 3DViewer: \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/Scrt1.o \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/gcrt1.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/crti.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/crtbeginS.o \
   CMakeFiles/3DViewer.dir/3DViewer_autogen/mocs_compilation.cpp.o \
@@ -93,7 +93,7 @@
   /usr/lib32/libbrotlicommon.so.1 \
   /usr/lib/libbrotlicommon.so.1
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/Scrt1.o:
+/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/gcrt1.o:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/crti.o:
 

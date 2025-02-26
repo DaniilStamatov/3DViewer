@@ -14,6 +14,7 @@
 #include <QOpenGLBuffer>
 #include <QOpenGLVertexArrayObject>
 #include <QElapsedTimer>
+#include <chrono>
 
 class OpenGLWindow : public QOpenGLWidget {
 public:
@@ -27,11 +28,7 @@ public:
   void SetLinesColor(float x, float y, float z);
   void ProcessInput();
 private slots:
-  void updateAngle() {
-    angle += 0.0005f;
-    if (angle > 360) {
-      angle -= 360;
-    }
+  void onTimeout() {
     update();
   }
 
@@ -53,6 +50,6 @@ private:
   std::shared_ptr<ModelRenderer> m_currentModel;
   std::vector<std::shared_ptr<ModelRenderer>> m_models;
 
-  QElapsedTimer timer; // Таймер для измерения времени
-    float lastFrame;     // Время последнего кадра
+  QElapsedTimer m_timer; // Таймер для измерения времени
+  std::chrono::high_resolution_clock::time_point lastFrame;     // Время последнего кадра
 };
