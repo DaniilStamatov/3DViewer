@@ -1,55 +1,69 @@
 #pragma once
-#include "../loader.h"
-#include "../shader/shader.h"
-#include "../transformations/transformation.h"
-#include "../Camera/camera.h"
-#include "ModelRenderer.h"
+#include <QElapsedTimer>
+#include <QKeyEvent>
+#include <QMouseEvent>
+#include <QOpenGLBuffer>
 #include <QOpenGLExtraFunctions>
 #include <QOpenGLShaderProgram>
+#include <QOpenGLVertexArrayObject>
 #include <QOpenGLWidget>
 #include <QTimer>
 #include <QVBoxLayout>
 #include <QWidget>
-#include <QKeyEvent>
-#include <QOpenGLBuffer>
-#include <QOpenGLVertexArrayObject>
-#include <QElapsedTimer>
 #include <chrono>
 
+#include "../Camera/Camera.h"
+#include "../Controller/ModelController.h"
+#include "../Loader.h"
+#include "../shader/shader.h"
+#include "../transformations/transformation.h"
+#include "ModelRenderer.h"
+
 class OpenGLWindow : public QOpenGLWidget {
-public:
-  OpenGLWindow(QWidget *parent = nullptr);
-  ~OpenGLWindow();
-  void ChangeCurrentModel();
-  void loadModel(const std::string &filename);
-  void SetObjectPosition(float x, float y, float z);
-  void SetObjectRotation(float x, float y, float z);
-  void SetObjectScale(float x, float y, float z);
-  void SetLinesColor(float x, float y, float z);
-  void ProcessInput();
-private slots:
-  void onTimeout() {
-    update();
-  }
+    Q_OBJECT
+   public:
+    OpenGLWindow(QWidget *parent = nullptr);
+    ~OpenGLWindow();
+    void loadModel(const std::string &filename);
+    void SetCurrentObjectPosition(float x, float y, float z);
+    void SetCurrentObjectRotation(float x, float y, float z);
+    void SetCurrentObjectScale(float x, float y, float z);
+    s21::Vector3 GetCurrentPosition() const;
+    s21::Vector3 GetCurrentRotation() const;
+    s21::Vector3 GetCurrentScale() const;
+    void SetCurrentLinesColor(float x, float y, float z);
+    void ParseTransform(s21::Vector3& position, s21::Vector3 &scale, s21::Vector3 &rotation);
+    void SwitchDrawMode();
+    void ProcessInput();
+   private slots:
+    void onTimeout() { update(); }
+   signals:
+    void changeCurrentModel();
+   protected:
+    void initializeGL() override;
+    void resizeGL(int w, int h) override;
+    void paintGL() override;
+    void keyPressEvent(QKeyEvent *event);
+    void mousePressEvent(QMouseEvent *event) override;
+    void mouseMoveEvent(QMouseEvent *event) override;
+    void mouseReleaseEvent(QMouseEvent *event) override;
+   
+   
+   private:
+    float deltaTime = 0.0f;
+    Camera m_camera;
+    bool modelLoaded = false;
+    float angle;
+    QOpenGLExtraFunctions *functions;
+    s21::Loader m_loader;
+    std::vector<ModelRenderer> m_models;
+    std::unique_ptr<ModelController> m_modelController;
+    QElapsedTimer m_timer;
+    std::chrono::high_resolution_clock::time_point lastFrame;
 
-protected:
-  void initializeGL() override;
-  void resizeGL(int w, int h) override;
-  void paintGL() override;
-  void keyPressEvent(QKeyEvent *event);
-
-private:
-  float deltaTime = 0.0f; 
-  Camera m_camera;
-  bool modelLoaded = false;
-  float angle;
-  QOpenGLExtraFunctions *functions;
-  GLuint m_vao, m_vbo, m_ebo, vboTexCoords, vboNormals;
-  s21::Loader m_loader;
-  size_t m_currentModelIndex;
-  std::shared_ptr<ModelRenderer> m_currentModel;
-  std::vector<std::shared_ptr<ModelRenderer>> m_models;
-
-  QElapsedTimer m_timer; // Таймер для измерения времени
-  std::chrono::high_resolution_clock::time_point lastFrame;     // Время последнего кадра
+    bool isDragging = false;
+    QPoint lastMousePos;
+     float lastX = 0.0f; // Последняя позиция X
+    float lastY = 0.0f; 
+     bool firstMouse = true;
 };

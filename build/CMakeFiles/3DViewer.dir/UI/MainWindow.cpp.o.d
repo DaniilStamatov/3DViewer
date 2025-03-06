@@ -2,8 +2,9 @@ CMakeFiles/3DViewer.dir/UI/MainWindow.cpp.o: \
  /home/daniil/Documents/3DViewer/src/UI/MainWindow.cpp \
  /usr/include/stdc-predef.h \
  /home/daniil/Documents/3DViewer/src/UI/MainWindow.h \
- /home/daniil/Documents/3DViewer/src/UI/ArrowButton.h \
- /usr/include/qt6/QtGui/QIcon /usr/include/qt6/QtGui/qicon.h \
+ /usr/include/qt6/QtWidgets/QColorDialog \
+ /usr/include/qt6/QtWidgets/qcolordialog.h \
+ /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \
  /usr/include/qt6/QtGui/qtguiglobal.h /usr/include/qt6/QtCore/qglobal.h \
  /usr/include/c++/14.2.1/type_traits \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
@@ -136,7 +137,13 @@ CMakeFiles/3DViewer.dir/UI/MainWindow.cpp.o: \
  /usr/include/qt6/QtCore/qttranslation.h \
  /usr/include/qt6/QtCore/qversiontagging.h \
  /usr/include/qt6/QtGui/qtgui-config.h \
- /usr/include/qt6/QtGui/qtguiexports.h /usr/include/qt6/QtCore/qsize.h \
+ /usr/include/qt6/QtGui/qtguiexports.h \
+ /usr/include/qt6/QtWidgets/qtwidgets-config.h \
+ /usr/include/qt6/QtWidgets/qtwidgetsexports.h \
+ /usr/include/qt6/QtWidgets/qdialog.h \
+ /usr/include/qt6/QtWidgets/qwidget.h \
+ /usr/include/qt6/QtGui/qwindowdefs.h \
+ /usr/include/qt6/QtCore/qobjectdefs.h \
  /usr/include/qt6/QtCore/qnamespace.h /usr/include/qt6/QtCore/qcompare.h \
  /usr/include/qt6/QtCore/qcomparehelpers.h \
  /usr/include/qt6/QtCore/q20type_traits.h \
@@ -166,32 +173,23 @@ CMakeFiles/3DViewer.dir/UI/MainWindow.cpp.o: \
  /usr/include/c++/14.2.1/bits/stl_bvector.h \
  /usr/include/c++/14.2.1/bits/vector.tcc /usr/include/c++/14.2.1/array \
  /usr/include/c++/14.2.1/compare /usr/include/qt6/QtCore/qtmetamacros.h \
- /usr/include/qt6/QtCore/qhashfunctions.h \
- /usr/include/qt6/QtCore/qstring.h /usr/include/qt6/QtCore/qchar.h \
- /usr/include/qt6/QtCore/qstringview.h \
- /usr/include/qt6/QtCore/qbytearray.h /usr/include/qt6/QtCore/qrefcount.h \
- /usr/include/qt6/QtCore/qarraydata.h /usr/include/qt6/QtCore/qpair.h \
- /usr/include/string.h /usr/include/strings.h \
- /usr/include/qt6/QtCore/qarraydatapointer.h \
- /usr/include/qt6/QtCore/qarraydataops.h \
- /usr/include/qt6/QtCore/qcontainertools_impl.h \
- /usr/include/qt6/QtCore/qxptype_traits.h /usr/include/c++/14.2.1/cstring \
- /usr/include/c++/14.2.1/iterator \
- /usr/include/c++/14.2.1/bits/stream_iterator.h \
- /usr/include/c++/14.2.1/iosfwd /usr/include/c++/14.2.1/bits/stringfwd.h \
+ /usr/include/qt6/QtCore/qobjectdefs_impl.h \
+ /usr/include/qt6/QtCore/qfunctionaltools_impl.h \
+ /usr/include/c++/14.2.1/memory \
+ /usr/include/c++/14.2.1/bits/stl_tempbuf.h \
+ /usr/include/c++/14.2.1/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/14.2.1/bits/align.h \
+ /usr/include/c++/14.2.1/bits/unique_ptr.h \
+ /usr/include/c++/14.2.1/bits/shared_ptr.h /usr/include/c++/14.2.1/iosfwd \
+ /usr/include/c++/14.2.1/bits/stringfwd.h \
  /usr/include/c++/14.2.1/bits/postypes.h /usr/include/c++/14.2.1/cwchar \
  /usr/include/wchar.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stdarg.h \
  /usr/include/bits/types/wint_t.h /usr/include/bits/types/mbstate_t.h \
  /usr/include/bits/types/__mbstate_t.h /usr/include/bits/types/__FILE.h \
  /usr/include/bits/types/FILE.h \
- /usr/include/c++/14.2.1/bits/streambuf_iterator.h \
- /usr/include/c++/14.2.1/streambuf \
- /usr/include/c++/14.2.1/bits/localefwd.h \
- /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++locale.h \
- /usr/include/c++/14.2.1/clocale /usr/include/locale.h \
- /usr/include/bits/locale.h /usr/include/c++/14.2.1/cctype \
- /usr/include/ctype.h /usr/include/c++/14.2.1/bits/ios_base.h \
+ /usr/include/c++/14.2.1/bits/shared_ptr_base.h \
+ /usr/include/c++/14.2.1/bits/allocated_ptr.h \
  /usr/include/c++/14.2.1/ext/atomicity.h \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/gthr.h \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/gthr-default.h \
@@ -204,6 +202,29 @@ CMakeFiles/3DViewer.dir/UI/MainWindow.cpp.o: \
  /usr/include/bits/pthread_stack_min-dynamic.h \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/atomic_word.h \
  /usr/include/sys/single_threaded.h \
+ /usr/include/c++/14.2.1/ext/concurrence.h \
+ /usr/include/c++/14.2.1/bits/shared_ptr_atomic.h \
+ /usr/include/c++/14.2.1/backward/auto_ptr.h \
+ /usr/include/c++/14.2.1/pstl/glue_memory_defs.h \
+ /usr/include/c++/14.2.1/pstl/execution_defs.h \
+ /usr/include/qt6/QtCore/qobject.h /usr/include/qt6/QtCore/qstring.h \
+ /usr/include/qt6/QtCore/qchar.h /usr/include/qt6/QtCore/qstringview.h \
+ /usr/include/qt6/QtCore/qbytearray.h /usr/include/qt6/QtCore/qrefcount.h \
+ /usr/include/qt6/QtCore/qarraydata.h /usr/include/qt6/QtCore/qpair.h \
+ /usr/include/string.h /usr/include/strings.h \
+ /usr/include/qt6/QtCore/qarraydatapointer.h \
+ /usr/include/qt6/QtCore/qarraydataops.h \
+ /usr/include/qt6/QtCore/qcontainertools_impl.h \
+ /usr/include/qt6/QtCore/qxptype_traits.h /usr/include/c++/14.2.1/cstring \
+ /usr/include/c++/14.2.1/iterator \
+ /usr/include/c++/14.2.1/bits/stream_iterator.h \
+ /usr/include/c++/14.2.1/bits/streambuf_iterator.h \
+ /usr/include/c++/14.2.1/streambuf \
+ /usr/include/c++/14.2.1/bits/localefwd.h \
+ /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++locale.h \
+ /usr/include/c++/14.2.1/clocale /usr/include/locale.h \
+ /usr/include/bits/locale.h /usr/include/c++/14.2.1/cctype \
+ /usr/include/ctype.h /usr/include/c++/14.2.1/bits/ios_base.h \
  /usr/include/c++/14.2.1/bits/locale_classes.h \
  /usr/include/c++/14.2.1/string \
  /usr/include/c++/14.2.1/bits/char_traits.h \
@@ -230,19 +251,6 @@ CMakeFiles/3DViewer.dir/UI/MainWindow.cpp.o: \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/error_constants.h \
  /usr/include/c++/14.2.1/stdexcept \
  /usr/include/c++/14.2.1/bits/streambuf.tcc \
- /usr/include/c++/14.2.1/memory \
- /usr/include/c++/14.2.1/bits/stl_tempbuf.h \
- /usr/include/c++/14.2.1/bits/stl_raw_storage_iter.h \
- /usr/include/c++/14.2.1/bits/align.h \
- /usr/include/c++/14.2.1/bits/unique_ptr.h \
- /usr/include/c++/14.2.1/bits/shared_ptr.h \
- /usr/include/c++/14.2.1/bits/shared_ptr_base.h \
- /usr/include/c++/14.2.1/bits/allocated_ptr.h \
- /usr/include/c++/14.2.1/ext/concurrence.h \
- /usr/include/c++/14.2.1/bits/shared_ptr_atomic.h \
- /usr/include/c++/14.2.1/backward/auto_ptr.h \
- /usr/include/c++/14.2.1/pstl/glue_memory_defs.h \
- /usr/include/c++/14.2.1/pstl/execution_defs.h \
  /usr/include/c++/14.2.1/algorithm \
  /usr/include/c++/14.2.1/bits/stl_algo.h \
  /usr/include/c++/14.2.1/bits/algorithmfwd.h \
@@ -263,40 +271,21 @@ CMakeFiles/3DViewer.dir/UI/MainWindow.cpp.o: \
  /usr/include/qt6/QtCore/qstringbuilder.h \
  /usr/include/qt6/QtCore/qstringconverter.h \
  /usr/include/qt6/QtCore/qstringconverter_base.h \
+ /usr/include/qt6/QtCore/qlist.h /usr/include/qt6/QtCore/qhashfunctions.h \
  /usr/include/c++/14.2.1/numeric \
  /usr/include/c++/14.2.1/bits/stl_numeric.h \
  /usr/include/c++/14.2.1/pstl/glue_numeric_defs.h \
- /usr/include/qt6/QtCore/qmargins.h /usr/include/qt6/QtCore/q23utility.h \
- /usr/include/qt6/QtCore/qlist.h /usr/include/qt6/QtCore/qiterator.h \
+ /usr/include/qt6/QtCore/qiterator.h \
  /usr/include/qt6/QtCore/qbytearraylist.h \
  /usr/include/qt6/QtCore/qstringlist.h \
  /usr/include/qt6/QtCore/qalgorithms.h \
  /usr/include/qt6/QtCore/qstringmatcher.h \
- /usr/include/qt6/QtGui/qpixmap.h /usr/include/qt6/QtGui/qpaintdevice.h \
- /usr/include/qt6/QtGui/qwindowdefs.h \
- /usr/include/qt6/QtCore/qobjectdefs.h \
- /usr/include/qt6/QtCore/qobjectdefs_impl.h \
- /usr/include/qt6/QtCore/qfunctionaltools_impl.h \
- /usr/include/qt6/QtCore/qrect.h /usr/include/qt6/QtCore/qpoint.h \
- /usr/include/qt6/QtGui/qcolor.h /usr/include/qt6/QtGui/qrgb.h \
- /usr/include/qt6/QtGui/qrgba64.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/limits.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/syslimits.h \
- /usr/include/limits.h /usr/include/bits/posix1_lim.h \
- /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
- /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
- /usr/include/bits/uio_lim.h /usr/include/qt6/QtCore/qshareddata.h \
- /usr/include/qt6/QtGui/qimage.h /usr/include/qt6/QtGui/qpixelformat.h \
- /usr/include/qt6/QtGui/qtransform.h /usr/include/qt6/QtGui/qpolygon.h \
- /usr/include/qt6/QtGui/qregion.h /usr/include/qt6/QtCore/qdatastream.h \
  /usr/include/qt6/QtCore/qscopedpointer.h \
- /usr/include/qt6/QtCore/qiodevicebase.h /usr/include/qt6/QtCore/qspan.h \
- /usr/include/c++/14.2.1/cassert /usr/include/qt6/QtCore/q20iterator.h \
- /usr/include/qt6/QtCore/qline.h /usr/include/qt6/QtGui/QMouseEvent \
- /usr/include/qt6/QtGui/qevent.h /usr/include/qt6/QtCore/qcoreevent.h \
- /usr/include/qt6/QtCore/qiodevice.h /usr/include/qt6/QtCore/qobject.h \
- /usr/include/qt6/QtCore/qmetatype.h /usr/include/qt6/QtCore/qfloat16.h \
- /usr/include/qt6/QtCore/qmath.h /usr/include/qt6/QtCore/qiterable.h \
+ /usr/include/qt6/QtCore/qmetatype.h \
+ /usr/include/qt6/QtCore/qdatastream.h \
+ /usr/include/qt6/QtCore/qiodevicebase.h \
+ /usr/include/qt6/QtCore/qfloat16.h /usr/include/qt6/QtCore/qmath.h \
+ /usr/include/qt6/QtCore/qiterable.h \
  /usr/include/qt6/QtCore/qmetacontainer.h \
  /usr/include/qt6/QtCore/qcontainerinfo.h \
  /usr/include/qt6/QtCore/qtaggedpointer.h \
@@ -309,9 +298,25 @@ CMakeFiles/3DViewer.dir/UI/MainWindow.cpp.o: \
  /usr/include/qt6/QtCore/qobject_impl.h \
  /usr/include/qt6/QtCore/qbindingstorage.h /usr/include/c++/14.2.1/chrono \
  /usr/include/c++/14.2.1/bits/chrono.h /usr/include/c++/14.2.1/ratio \
- /usr/include/c++/14.2.1/ctime /usr/include/qt6/QtCore/qurl.h \
- /usr/include/qt6/QtCore/qvariant.h /usr/include/qt6/QtCore/qdebug.h \
- /usr/include/qt6/QtCore/qtextstream.h \
+ /usr/include/c++/14.2.1/ctime /usr/include/qt6/QtCore/qmargins.h \
+ /usr/include/qt6/QtCore/q23utility.h /usr/include/qt6/QtGui/qaction.h \
+ /usr/include/qt6/QtGui/qkeysequence.h /usr/include/qt6/QtGui/qicon.h \
+ /usr/include/qt6/QtCore/qsize.h /usr/include/qt6/QtGui/qpixmap.h \
+ /usr/include/qt6/QtGui/qpaintdevice.h /usr/include/qt6/QtCore/qrect.h \
+ /usr/include/qt6/QtCore/qpoint.h /usr/include/qt6/QtGui/qcolor.h \
+ /usr/include/qt6/QtGui/qrgb.h /usr/include/qt6/QtGui/qrgba64.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/limits.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/syslimits.h \
+ /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+ /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
+ /usr/include/bits/uio_lim.h /usr/include/qt6/QtCore/qshareddata.h \
+ /usr/include/qt6/QtGui/qimage.h /usr/include/qt6/QtGui/qpixelformat.h \
+ /usr/include/qt6/QtGui/qtransform.h /usr/include/qt6/QtGui/qpolygon.h \
+ /usr/include/qt6/QtGui/qregion.h /usr/include/qt6/QtCore/qspan.h \
+ /usr/include/c++/14.2.1/cassert /usr/include/qt6/QtCore/q20iterator.h \
+ /usr/include/qt6/QtCore/qline.h /usr/include/qt6/QtCore/qvariant.h \
+ /usr/include/qt6/QtCore/qdebug.h /usr/include/qt6/QtCore/qtextstream.h \
  /usr/include/qt6/QtCore/qcontiguouscache.h \
  /usr/include/c++/14.2.1/climits /usr/include/qt6/QtCore/qsharedpointer.h \
  /usr/include/qt6/QtCore/qsharedpointer_impl.h \
@@ -319,6 +324,61 @@ CMakeFiles/3DViewer.dir/UI/MainWindow.cpp.o: \
  /usr/include/qt6/QtCore/qshareddata_impl.h \
  /usr/include/qt6/QtCore/qset.h /usr/include/qt6/QtCore/qhash.h \
  /usr/include/qt6/QtCore/qvarlengtharray.h \
+ /usr/include/qt6/QtGui/qpalette.h /usr/include/qt6/QtGui/qbrush.h \
+ /usr/include/qt6/QtGui/qfont.h /usr/include/qt6/QtCore/qendian.h \
+ /usr/include/qt6/QtGui/qfontmetrics.h /usr/include/qt6/QtGui/qfontinfo.h \
+ /usr/include/qt6/QtWidgets/qsizepolicy.h \
+ /usr/include/qt6/QtGui/qcursor.h /usr/include/qt6/QtGui/qbitmap.h \
+ /usr/include/qt6/QtWidgets/QFileDialog \
+ /usr/include/qt6/QtWidgets/qfiledialog.h /usr/include/qt6/QtCore/qdir.h \
+ /usr/include/qt6/QtCore/qdirlisting.h \
+ /usr/include/qt6/QtCore/qfiledevice.h \
+ /usr/include/qt6/QtCore/qiodevice.h /usr/include/qt6/QtCore/qdatetime.h \
+ /usr/include/qt6/QtCore/qcalendar.h /usr/include/qt6/QtCore/qlocale.h \
+ /usr/include/qt6/QtCore/qfile.h /usr/include/c++/14.2.1/filesystem \
+ /usr/include/c++/14.2.1/bits/fs_fwd.h \
+ /usr/include/c++/14.2.1/bits/fs_path.h /usr/include/c++/14.2.1/locale \
+ /usr/include/c++/14.2.1/bits/locale_facets.h \
+ /usr/include/c++/14.2.1/cwctype /usr/include/wctype.h \
+ /usr/include/bits/wctype-wchar.h \
+ /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/ctype_base.h \
+ /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/ctype_inline.h \
+ /usr/include/c++/14.2.1/bits/locale_facets.tcc \
+ /usr/include/c++/14.2.1/bits/locale_facets_nonio.h \
+ /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/time_members.h \
+ /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/14.2.1/bits/codecvt.h \
+ /usr/include/c++/14.2.1/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/14.2.1/bits/locale_conv.h \
+ /usr/include/c++/14.2.1/iomanip \
+ /usr/include/c++/14.2.1/bits/quoted_string.h \
+ /usr/include/c++/14.2.1/sstream /usr/include/c++/14.2.1/istream \
+ /usr/include/c++/14.2.1/ios /usr/include/c++/14.2.1/bits/basic_ios.h \
+ /usr/include/c++/14.2.1/bits/basic_ios.tcc \
+ /usr/include/c++/14.2.1/ostream /usr/include/c++/14.2.1/bits/ostream.tcc \
+ /usr/include/c++/14.2.1/bits/istream.tcc \
+ /usr/include/c++/14.2.1/bits/sstream.tcc /usr/include/c++/14.2.1/codecvt \
+ /usr/include/c++/14.2.1/bits/fs_dir.h \
+ /usr/include/c++/14.2.1/bits/fs_ops.h \
+ /usr/include/qt6/QtCore/qfileinfo.h /usr/include/qt6/QtCore/qtimezone.h \
+ /usr/include/qt6/QtCore/qurl.h /usr/include/qt6/QtWidgets/QLabel \
+ /usr/include/qt6/QtWidgets/qlabel.h /usr/include/qt6/QtWidgets/qframe.h \
+ /usr/include/qt6/QtGui/qpicture.h /usr/include/qt6/QtGui/qtextdocument.h \
+ /usr/include/qt6/QtWidgets/QLineEdit \
+ /usr/include/qt6/QtWidgets/qlineedit.h \
+ /usr/include/qt6/QtGui/qtextcursor.h \
+ /usr/include/qt6/QtGui/qtextformat.h /usr/include/qt6/QtGui/qpen.h \
+ /usr/include/qt6/QtGui/qtextoption.h \
+ /usr/include/qt6/QtWidgets/QMainWindow \
+ /usr/include/qt6/QtWidgets/qmainwindow.h \
+ /usr/include/qt6/QtWidgets/qtabwidget.h \
+ /usr/include/qt6/QtWidgets/QPushButton \
+ /usr/include/qt6/QtWidgets/qpushbutton.h \
+ /usr/include/qt6/QtWidgets/qabstractbutton.h \
+ /home/daniil/Documents/3DViewer/src/UI/ArrowButton.h \
+ /usr/include/qt6/QtGui/QIcon /usr/include/qt6/QtGui/qicon.h \
+ /usr/include/qt6/QtGui/QMouseEvent /usr/include/qt6/QtGui/qevent.h \
+ /usr/include/qt6/QtCore/qcoreevent.h \
  /usr/include/qt6/QtGui/qeventpoint.h /usr/include/qt6/QtGui/qvector2d.h \
  /usr/include/qt6/QtGui/qvectornd.h \
  /usr/include/qt6/QtGui/qpointingdevice.h \
@@ -337,111 +397,56 @@ CMakeFiles/3DViewer.dir/UI/MainWindow.cpp.o: \
  /usr/include/qt6/QtCore/qelapsedtimer.h \
  /usr/include/qt6/QtCore/qeventloop.h \
  /usr/include/qt6/QtCore/qcoreapplication_platform.h \
- /usr/include/qt6/QtGui/qinputmethod.h /usr/include/qt6/QtCore/qlocale.h \
+ /usr/include/qt6/QtGui/qinputmethod.h \
  /usr/include/qt6/QtGui/qguiapplication_platform.h \
- /usr/include/qt6/QtGui/qkeysequence.h /usr/include/qt6/QtGui/QPixmap \
- /usr/include/qt6/QtGui/qpixmap.h /usr/include/qt6/QtWidgets/QPushButton \
- /usr/include/qt6/QtWidgets/qpushbutton.h \
- /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \
- /usr/include/qt6/QtWidgets/qtwidgets-config.h \
- /usr/include/qt6/QtWidgets/qtwidgetsexports.h \
- /usr/include/qt6/QtWidgets/qabstractbutton.h \
- /usr/include/qt6/QtGui/qicon.h /usr/include/qt6/QtWidgets/qwidget.h \
- /usr/include/qt6/QtGui/qaction.h /usr/include/qt6/QtGui/qpalette.h \
- /usr/include/qt6/QtGui/qbrush.h /usr/include/qt6/QtGui/qfont.h \
- /usr/include/qt6/QtCore/qendian.h /usr/include/qt6/QtGui/qfontmetrics.h \
- /usr/include/qt6/QtGui/qfontinfo.h \
- /usr/include/qt6/QtWidgets/qsizepolicy.h \
- /usr/include/qt6/QtGui/qcursor.h /usr/include/qt6/QtGui/qbitmap.h \
+ /usr/include/qt6/QtGui/QPixmap /usr/include/qt6/QtGui/qpixmap.h \
  /usr/include/qt6/QtCore/QTimer /usr/include/qt6/QtCore/qtimer.h \
  /usr/include/qt6/QtCore/qbasictimer.h /usr/include/qt6/QtGui/QTransform \
  /home/daniil/Documents/3DViewer/src/UI/OpenGLWindow.h \
- /home/daniil/Documents/3DViewer/src/UI/../loader.h \
- /home/daniil/Documents/3DViewer/src/UI/../model.h \
- /home/daniil/Documents/3DViewer/src/UI/../transformations/transformation.h \
- /home/daniil/Documents/3DViewer/src/UI/../transformations/mat4.h \
- /usr/include/c++/14.2.1/iostream /usr/include/c++/14.2.1/ostream \
- /usr/include/c++/14.2.1/ios /usr/include/c++/14.2.1/bits/basic_ios.h \
- /usr/include/c++/14.2.1/bits/locale_facets.h \
- /usr/include/c++/14.2.1/cwctype /usr/include/wctype.h \
- /usr/include/bits/wctype-wchar.h \
- /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/ctype_base.h \
- /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/ctype_inline.h \
- /usr/include/c++/14.2.1/bits/locale_facets.tcc \
- /usr/include/c++/14.2.1/bits/basic_ios.tcc \
- /usr/include/c++/14.2.1/bits/ostream.tcc /usr/include/c++/14.2.1/istream \
- /usr/include/c++/14.2.1/bits/istream.tcc /usr/include/c++/14.2.1/fstream \
- /usr/include/c++/14.2.1/bits/codecvt.h \
- /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/basic_file.h \
- /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++io.h \
- /usr/include/c++/14.2.1/bits/fstream.tcc /usr/include/c++/14.2.1/sstream \
- /usr/include/c++/14.2.1/bits/sstream.tcc \
- /home/daniil/Documents/3DViewer/src/UI/../shader/shader.h \
+ /usr/include/qt6/QtCore/QElapsedTimer \
+ /usr/include/qt6/QtCore/qelapsedtimer.h /usr/include/qt6/QtGui/QKeyEvent \
+ /usr/include/qt6/QtOpenGL/QOpenGLBuffer \
+ /usr/include/qt6/QtOpenGL/qopenglbuffer.h \
+ /usr/include/qt6/QtOpenGL/qtopenglglobal.h \
+ /usr/include/qt6/QtOpenGL/qtopenglexports.h \
+ /usr/include/qt6/QtGui/qopengl.h /usr/include/GL/gl.h \
+ /usr/include/qt6/QtGui/qopenglext.h /usr/include/inttypes.h \
  /usr/include/qt6/QtGui/QOpenGLExtraFunctions \
  /usr/include/qt6/QtGui/qopenglextrafunctions.h \
  /usr/include/qt6/QtGui/qopenglfunctions.h \
- /usr/include/qt6/QtGui/qopengl.h /usr/include/GL/gl.h \
- /usr/include/qt6/QtGui/qopenglext.h /usr/include/inttypes.h \
  /usr/include/qt6/QtGui/qopenglcontext.h \
  /usr/include/qt6/QtGui/QSurfaceFormat \
  /usr/include/qt6/QtGui/qsurfaceformat.h \
  /usr/include/qt6/QtGui/qopenglcontext_platform.h \
- /home/daniil/Documents/3DViewer/src/UI/../Camera/camera.h \
- /home/daniil/Documents/3DViewer/src/UI/ModelRenderer.h \
+ /usr/include/qt6/QtOpenGL/QOpenGLShaderProgram \
+ /usr/include/qt6/QtOpenGL/qopenglshaderprogram.h \
+ /usr/include/qt6/QtGui/qvector3d.h /usr/include/qt6/QtGui/qvector4d.h \
+ /usr/include/qt6/QtGui/qmatrix4x4.h /usr/include/qt6/QtGui/qquaternion.h \
+ /usr/include/qt6/QtGui/qgenericmatrix.h \
+ /usr/include/qt6/QtOpenGL/QOpenGLVertexArrayObject \
+ /usr/include/qt6/QtOpenGL/qopenglvertexarrayobject.h \
  /usr/include/qt6/QtOpenGLWidgets/QOpenGLWidget \
  /usr/include/qt6/QtOpenGLWidgets/qopenglwidget.h \
  /usr/include/qt6/QtOpenGLWidgets/qtopenglwidgetsglobal.h \
  /usr/include/qt6/QtOpenGLWidgets/qtopenglwidgetsexports.h \
  /usr/include/qt6/QtWidgets/QWidget /usr/include/qt6/QtWidgets/qwidget.h \
- /usr/include/qt6/QtOpenGL/QOpenGLShaderProgram \
- /usr/include/qt6/QtOpenGL/qopenglshaderprogram.h \
- /usr/include/qt6/QtOpenGL/qtopenglglobal.h \
- /usr/include/qt6/QtOpenGL/qtopenglexports.h \
- /usr/include/qt6/QtGui/qvector3d.h /usr/include/qt6/QtGui/qvector4d.h \
- /usr/include/qt6/QtGui/qmatrix4x4.h /usr/include/qt6/QtGui/qquaternion.h \
- /usr/include/qt6/QtGui/qgenericmatrix.h \
  /usr/include/qt6/QtWidgets/QVBoxLayout \
  /usr/include/qt6/QtWidgets/qboxlayout.h \
  /usr/include/qt6/QtWidgets/qlayout.h \
  /usr/include/qt6/QtWidgets/qlayoutitem.h \
  /usr/include/qt6/QtWidgets/qboxlayout.h \
  /usr/include/qt6/QtWidgets/qgridlayout.h \
- /usr/include/qt6/QtWidgets/QWidget /usr/include/qt6/QtGui/QKeyEvent \
- /usr/include/qt6/QtOpenGL/QOpenGLBuffer \
- /usr/include/qt6/QtOpenGL/qopenglbuffer.h \
- /usr/include/qt6/QtOpenGL/QOpenGLVertexArrayObject \
- /usr/include/qt6/QtOpenGL/qopenglvertexarrayobject.h \
- /usr/include/qt6/QtCore/QElapsedTimer \
- /usr/include/qt6/QtCore/qelapsedtimer.h \
- /usr/include/qt6/QtWidgets/QColorDialog \
- /usr/include/qt6/QtWidgets/qcolordialog.h \
- /usr/include/qt6/QtWidgets/qdialog.h /usr/include/qt6/QtWidgets/QLabel \
- /usr/include/qt6/QtWidgets/qlabel.h /usr/include/qt6/QtWidgets/qframe.h \
- /usr/include/qt6/QtGui/qpicture.h /usr/include/qt6/QtGui/qtextdocument.h \
- /usr/include/qt6/QtWidgets/QLineEdit \
- /usr/include/qt6/QtWidgets/qlineedit.h \
- /usr/include/qt6/QtGui/qtextcursor.h \
- /usr/include/qt6/QtGui/qtextformat.h /usr/include/qt6/QtGui/qpen.h \
- /usr/include/qt6/QtGui/qtextoption.h \
- /usr/include/qt6/QtWidgets/QMainWindow \
- /usr/include/qt6/QtWidgets/qmainwindow.h \
- /usr/include/qt6/QtWidgets/qtabwidget.h \
- /usr/include/qt6/QtWidgets/QFileDialog \
- /usr/include/qt6/QtWidgets/qfiledialog.h /usr/include/qt6/QtCore/qdir.h \
- /usr/include/qt6/QtCore/qdirlisting.h \
- /usr/include/qt6/QtCore/qfiledevice.h \
- /usr/include/qt6/QtCore/qdatetime.h /usr/include/qt6/QtCore/qcalendar.h \
- /usr/include/qt6/QtCore/qfile.h /usr/include/c++/14.2.1/filesystem \
- /usr/include/c++/14.2.1/bits/fs_fwd.h \
- /usr/include/c++/14.2.1/bits/fs_path.h /usr/include/c++/14.2.1/locale \
- /usr/include/c++/14.2.1/bits/locale_facets_nonio.h \
- /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/time_members.h \
- /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/messages_members.h \
- /usr/include/libintl.h \
- /usr/include/c++/14.2.1/bits/locale_facets_nonio.tcc \
- /usr/include/c++/14.2.1/bits/locale_conv.h \
- /usr/include/c++/14.2.1/iomanip \
- /usr/include/c++/14.2.1/bits/quoted_string.h \
- /usr/include/c++/14.2.1/codecvt /usr/include/c++/14.2.1/bits/fs_dir.h \
- /usr/include/c++/14.2.1/bits/fs_ops.h \
- /usr/include/qt6/QtCore/qfileinfo.h /usr/include/qt6/QtCore/qtimezone.h
+ /usr/include/qt6/QtWidgets/QWidget \
+ /home/daniil/Documents/3DViewer/src/UI/../Camera/camera.h \
+ /home/daniil/Documents/3DViewer/src/UI/../Camera/../transformations/transformation.h \
+ /home/daniil/Documents/3DViewer/src/UI/../Camera/../transformations/mat4.h \
+ /usr/include/c++/14.2.1/iostream \
+ /home/daniil/Documents/3DViewer/src/UI/../Controller/ModelController.h \
+ /home/daniil/Documents/3DViewer/src/UI/../Controller/../UI/ModelRenderer.h \
+ /home/daniil/Documents/3DViewer/src/UI/../Controller/../UI/../loader.h \
+ /home/daniil/Documents/3DViewer/src/UI/../Controller/../UI/../model.h \
+ /usr/include/c++/14.2.1/fstream \
+ /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/basic_file.h \
+ /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++io.h \
+ /usr/include/c++/14.2.1/bits/fstream.tcc \
+ /home/daniil/Documents/3DViewer/src/UI/../Controller/../UI/../shader/shader.h

@@ -6,6 +6,7 @@
   CMakeFiles/3DViewer.dir/UI/OpenGLWindow.cpp.o \
   CMakeFiles/3DViewer.dir/UI/MainWindow.cpp.o \
   CMakeFiles/3DViewer.dir/UI/ModelRenderer.cpp.o \
+  CMakeFiles/3DViewer.dir/Controller/ModelController.cpp.o \
   CMakeFiles/3DViewer.dir/main.cpp.o \
   CMakeFiles/3DViewer.dir/loader.cpp.o \
   CMakeFiles/3DViewer.dir/transformations/transformation.cpp.o \
@@ -106,6 +107,8 @@ CMakeFiles/3DViewer.dir/UI/OpenGLWindow.cpp.o:
 CMakeFiles/3DViewer.dir/UI/MainWindow.cpp.o:
 
 CMakeFiles/3DViewer.dir/UI/ModelRenderer.cpp.o:
+
+CMakeFiles/3DViewer.dir/Controller/ModelController.cpp.o:
 
 CMakeFiles/3DViewer.dir/main.cpp.o:
 

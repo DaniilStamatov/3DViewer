@@ -455,6 +455,12 @@
 	"HEADERS" : 
 	[
 		[
+			"/home/daniil/Documents/3DViewer/src/Controller/ModelController.h",
+			"Mu",
+			"TTE4PTQQBL/moc_ModelController.cpp",
+			null
+		],
+		[
 			"/home/daniil/Documents/3DViewer/src/UI/ArrowButton.h",
 			"Mu",
 			"KRKR4BN5RM/moc_ArrowButton.cpp",
@@ -485,21 +491,9 @@
 			null
 		],
 		[
-			"/home/daniil/Documents/3DViewer/src/model.h",
-			"Mu",
-			"EWIEGA46WW/moc_model.cpp",
-			null
-		],
-		[
 			"/home/daniil/Documents/3DViewer/src/shader/shader.h",
 			"Mu",
 			"Y3UQALW6IS/moc_shader.cpp",
-			null
-		],
-		[
-			"/home/daniil/Documents/3DViewer/src/transformations/mat4.h",
-			"Mu",
-			"43WND7NQXU/moc_mat4.cpp",
 			null
 		],
 		[
@@ -578,6 +572,11 @@
 	"SETTINGS_FILE" : "/home/daniil/Documents/3DViewer/src/build/CMakeFiles/3DViewer_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"/home/daniil/Documents/3DViewer/src/Controller/ModelController.cpp",
+			"Mu",
+			null
+		],
 		[ "/home/daniil/Documents/3DViewer/src/UI/MainWindow.cpp", "Mu", null ],
 		[
 			"/home/daniil/Documents/3DViewer/src/UI/ModelRenderer.cpp",

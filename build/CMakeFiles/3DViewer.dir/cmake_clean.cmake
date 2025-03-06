@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "3DViewer_autogen/timestamp"
   "CMakeFiles/3DViewer.dir/3DViewer_autogen/mocs_compilation.cpp.o"
   "CMakeFiles/3DViewer.dir/3DViewer_autogen/mocs_compilation.cpp.o.d"
+  "CMakeFiles/3DViewer.dir/Controller/ModelController.cpp.o"
+  "CMakeFiles/3DViewer.dir/Controller/ModelController.cpp.o.d"
   "CMakeFiles/3DViewer.dir/UI/MainWindow.cpp.o"
   "CMakeFiles/3DViewer.dir/UI/MainWindow.cpp.o.d"
   "CMakeFiles/3DViewer.dir/UI/ModelRenderer.cpp.o"

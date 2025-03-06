@@ -82,6 +82,7 @@
         "qopenglshaderprogram": "cpp",
         "qwidget": "cpp",
         "qtimer": "cpp",
-        "qopenglbuffer": "cpp"
+        "qopenglbuffer": "cpp",
+        "qopenglvertexarrayobject": "cpp"
     }
 }

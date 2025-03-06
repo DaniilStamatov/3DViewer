@@ -179,6 +179,30 @@ depend:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/3DViewer_autogen/mocs_compilation.cpp.s
 .PHONY : 3DViewer_autogen/mocs_compilation.cpp.s
 
+Controller/ModelController.o: Controller/ModelController.cpp.o
+.PHONY : Controller/ModelController.o
+
+# target to build an object file
+Controller/ModelController.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/Controller/ModelController.cpp.o
+.PHONY : Controller/ModelController.cpp.o
+
+Controller/ModelController.i: Controller/ModelController.cpp.i
+.PHONY : Controller/ModelController.i
+
+# target to preprocess a source file
+Controller/ModelController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/Controller/ModelController.cpp.i
+.PHONY : Controller/ModelController.cpp.i
+
+Controller/ModelController.s: Controller/ModelController.cpp.s
+.PHONY : Controller/ModelController.s
+
+# target to generate assembly for a file
+Controller/ModelController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/Controller/ModelController.cpp.s
+.PHONY : Controller/ModelController.cpp.s
+
 UI/MainWindow.o: UI/MainWindow.cpp.o
 .PHONY : UI/MainWindow.o
 
@@ -361,6 +385,9 @@ help:
 	@echo "... 3DViewer_autogen/mocs_compilation.o"
 	@echo "... 3DViewer_autogen/mocs_compilation.i"
 	@echo "... 3DViewer_autogen/mocs_compilation.s"
+	@echo "... Controller/ModelController.o"
+	@echo "... Controller/ModelController.i"
+	@echo "... Controller/ModelController.s"
 	@echo "... UI/MainWindow.o"
 	@echo "... UI/MainWindow.i"
 	@echo "... UI/MainWindow.s"
