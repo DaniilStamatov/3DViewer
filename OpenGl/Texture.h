@@ -1,8 +1,8 @@
 #pragma once
 #include <string>
 #include <QOpenGLExtraFunctions>
-
-#include <../vendor/stb_image.h>
+#include <iostream>
+#include "../vendor/stb_image.h"    
 class Texture {
 public:
     Texture(QOpenGLExtraFunctions* functions, const std::string& filepath);

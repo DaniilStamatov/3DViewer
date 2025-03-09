@@ -8,9 +8,11 @@
   CMakeFiles/3DViewer.dir/UI/ModelRenderer.cpp.o \
   CMakeFiles/3DViewer.dir/Controller/ModelController.cpp.o \
   CMakeFiles/3DViewer.dir/main.cpp.o \
-  CMakeFiles/3DViewer.dir/loader.cpp.o \
+  CMakeFiles/3DViewer.dir/Loader.cpp.o \
   CMakeFiles/3DViewer.dir/transformations/transformation.cpp.o \
   CMakeFiles/3DViewer.dir/shader/shader.cpp.o \
+  CMakeFiles/3DViewer.dir/OpenGl/Texture.cpp.o \
+  CMakeFiles/3DViewer.dir/vendor/stb_image.cpp.o \
   /usr/lib/libQt6OpenGLWidgets.so.6.8.1 \
   /usr/lib/libOpenGL.so \
   /usr/lib/libGLX.so \
@@ -112,11 +114,15 @@ CMakeFiles/3DViewer.dir/Controller/ModelController.cpp.o:
 
 CMakeFiles/3DViewer.dir/main.cpp.o:
 
-CMakeFiles/3DViewer.dir/loader.cpp.o:
+CMakeFiles/3DViewer.dir/Loader.cpp.o:
 
 CMakeFiles/3DViewer.dir/transformations/transformation.cpp.o:
 
 CMakeFiles/3DViewer.dir/shader/shader.cpp.o:
+
+CMakeFiles/3DViewer.dir/OpenGl/Texture.cpp.o:
+
+CMakeFiles/3DViewer.dir/vendor/stb_image.cpp.o:
 
 /usr/lib/libQt6OpenGLWidgets.so.6.8.1:
 

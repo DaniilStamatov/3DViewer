@@ -80,6 +80,9 @@ void Shader::SetUniformMat4f(const std::string &name, const s21::Matrix4x4 &mat)
 void Shader::SetUniform3f(const std::string &name, const s21::Vector3 &vec) {
     m_functions->glUniform3f(GetUniformLocation(name), vec.x, vec.y, vec.z);
 }
+void Shader::SetUniform1i(const std::string &name, int num) {
+    m_functions->glUniform1i(GetUniformLocation(name), num);
+}
 int Shader::GetUniformLocation(const std::string &name) {
     if (m_UniformLocationCashe.find(name) != m_UniformLocationCashe.end()) return m_UniformLocationCashe[name];
     int location = m_functions->glGetUniformLocation(m_rendererID, name.c_str());

@@ -1,14 +1,16 @@
 /home/daniil/Documents/3DViewer/src/build/3DViewer_autogen/KRKR4BN5RM/moc_ArrowButton.cpp: /home/daniil/Documents/3DViewer/src/UI/ArrowButton.h \
   /home/daniil/Documents/3DViewer/src/build/3DViewer_autogen/moc_predefs.h \
-  /home/daniil/Documents/3DViewer/src/Camera/camera.h \
+  /home/daniil/Documents/3DViewer/src/Camera/Camera.h \
   /home/daniil/Documents/3DViewer/src/Controller/ModelController.h \
+  /home/daniil/Documents/3DViewer/src/Loader.h \
+  /home/daniil/Documents/3DViewer/src/OpenGl/Texture.h \
   /home/daniil/Documents/3DViewer/src/UI/ModelRenderer.h \
   /home/daniil/Documents/3DViewer/src/UI/OpenGLWindow.h \
-  /home/daniil/Documents/3DViewer/src/loader.h \
   /home/daniil/Documents/3DViewer/src/model.h \
   /home/daniil/Documents/3DViewer/src/shader/shader.h \
   /home/daniil/Documents/3DViewer/src/transformations/mat4.h \
   /home/daniil/Documents/3DViewer/src/transformations/transformation.h \
+  /home/daniil/Documents/3DViewer/src/vendor/stb_image.h \
   /usr/include/GL/gl.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \

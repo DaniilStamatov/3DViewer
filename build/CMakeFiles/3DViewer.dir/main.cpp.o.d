@@ -439,16 +439,18 @@ CMakeFiles/3DViewer.dir/main.cpp.o: \
  /usr/include/qt6/QtWidgets/qboxlayout.h \
  /usr/include/qt6/QtWidgets/qgridlayout.h \
  /usr/include/qt6/QtWidgets/QWidget \
- /home/daniil/Documents/3DViewer/src/UI/../Camera/camera.h \
+ /home/daniil/Documents/3DViewer/src/UI/../Camera/Camera.h \
  /home/daniil/Documents/3DViewer/src/UI/../Camera/../transformations/transformation.h \
  /home/daniil/Documents/3DViewer/src/UI/../Camera/../transformations/mat4.h \
  /usr/include/c++/14.2.1/iostream \
  /home/daniil/Documents/3DViewer/src/UI/../Controller/ModelController.h \
  /home/daniil/Documents/3DViewer/src/UI/../Controller/../UI/ModelRenderer.h \
- /home/daniil/Documents/3DViewer/src/UI/../Controller/../UI/../loader.h \
+ /home/daniil/Documents/3DViewer/src/UI/../Controller/../UI/../Loader.h \
  /home/daniil/Documents/3DViewer/src/UI/../Controller/../UI/../model.h \
  /usr/include/c++/14.2.1/fstream \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/basic_file.h \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++io.h \
  /usr/include/c++/14.2.1/bits/fstream.tcc \
- /home/daniil/Documents/3DViewer/src/UI/../Controller/../UI/../shader/shader.h
+ /home/daniil/Documents/3DViewer/src/UI/../Controller/../UI/../shader/shader.h \
+ /home/daniil/Documents/3DViewer/src/UI/../Controller/../UI/../OpenGl/Texture.h \
+ /home/daniil/Documents/3DViewer/src/UI/../Controller/../UI/../OpenGl/../vendor/stb_image.h

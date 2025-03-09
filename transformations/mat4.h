@@ -108,6 +108,10 @@ inline Vector3 operator+(const Vector3 &vec, const Vector3 &other) {
     return Vector3(vec.x + other.x, vec.y + other.y, vec.z + other.z);
 }
 
+inline bool operator==(const Vector3 &vec, const Vector3 &other) {
+    return vec.x == other.x && vec.y == other.y && vec.z == other.z;
+}
+
 inline Vector3 normalize(const Vector3 &vec) {
     float len = vec.length();
     return Vector3(vec.x / len, vec.y / len, vec.z / len);

@@ -1,7 +1,7 @@
 #include "ModelRenderer.h"
 
 ModelRenderer::ModelRenderer(QOpenGLExtraFunctions *functions, const s21::Loader &loader)
-    : m_shader(functions, "shaders/basic.shader") {
+    : m_shader(functions, "shaders/basic.shader"), m_texture(functions, "res/images/awesomeface.png") {
     m_transform = s21::Matrix4x4();
     m_linesColor = s21::Vector3(1.0, 0.5, 0.3);
     m_loader = loader;
@@ -9,6 +9,8 @@ ModelRenderer::ModelRenderer(QOpenGLExtraFunctions *functions, const s21::Loader
     functions->glGenVertexArrays(1, &m_vao);
     functions->glGenBuffers(1, &m_vbo);
     functions->glGenBuffers(1, &m_eboLines);
+    functions->glGenBuffers(1, &m_normalEBO);
+    functions->glGenBuffers(1, &m_normalVBO);
     functions->glGenBuffers(1, &m_eboTriangles);
     SetUp();
 }
@@ -18,15 +20,17 @@ ModelRenderer::~ModelRenderer() {}
 void ModelRenderer::SetUp() {
     m_functions->glBindVertexArray(m_vao);
     m_functions->glBindBuffer(GL_ARRAY_BUFFER, m_vbo);
-    m_functions->glBufferData(GL_ARRAY_BUFFER, m_loader.GetVerticies().size() * sizeof(s21::Vector3),
+    m_functions->glBufferData(GL_ARRAY_BUFFER, m_loader.GetVerticies().size() * sizeof(s21::Vertex),
                               m_loader.GetVerticies().data(), GL_STATIC_DRAW);
 
     std::vector<unsigned int> indices;
     indices.reserve(m_loader.GetFaces().size());
-    const std::vector<s21::FaceVertex> &m_faceVerticies = m_loader.GetFaces();
-    for (const auto& faceVertice : m_faceVerticies) {
-        indices.emplace_back(faceVertice.vertexIndex);
+    const std::vector<unsigned int> &lindices = m_loader.GetIndices();
+    for (const auto& index : lindices) {
+        indices.emplace_back(index);
+        
     }
+
     m_functions->glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_eboTriangles);
     m_functions->glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned int), indices.data(),
                               GL_STATIC_DRAW);
@@ -40,12 +44,15 @@ void ModelRenderer::SetUp() {
         lineIndices.push_back(indices[i + 2]);
         lineIndices.push_back(indices[i]);
     }
-
+ 
     m_functions->glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_eboLines);
     m_functions->glBufferData(GL_ELEMENT_ARRAY_BUFFER, lineIndices.size() * sizeof(unsigned int), lineIndices.data(),
                               GL_STATIC_DRAW);
+
     m_functions->glEnableVertexAttribArray(0);
-    m_functions->glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(s21::Vector3), (void *)0);
+    m_functions->glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(s21::Vertex), (void *)0);
+    m_functions->glEnableVertexAttribArray(1);
+    m_functions->glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(s21::Vertex), (void *)offsetof(s21::Vertex, normal));
     m_functions->glBindVertexArray(0);
 }
 
@@ -98,14 +105,14 @@ void ModelRenderer::ParseTransform(s21::Vector3& position, s21::Vector3 &scale, 
     scale.y = Row[2].length();
     Row[2] = s21::scale(Row[2], 1);
     rotation.y = asin(-Row[0][2]);
-		if (cos(rotation.y) != 0) {
-			rotation.x = atan2(Row[1][2], Row[2][2]);
-			rotation.z = atan2(Row[0][1], Row[0][0]);
-		}
-		else {
-			rotation.x = atan2(-Row[2][0], Row[1][1]);
-			rotation.z = 0;
-		}
+	if (cos(rotation.y) != 0) {
+		rotation.x = atan2(Row[1][2], Row[2][2]);
+		rotation.z = atan2(Row[0][1], Row[0][0]);
+	}
+	else {
+		rotation.x = atan2(-Row[2][0], Row[1][1]);
+		rotation.z = 0;
+	}
 }
 
 void ModelRenderer::SwitchDrawMode() {
@@ -118,16 +125,24 @@ void ModelRenderer::Draw(const s21::Matrix4x4 &projection, const s21::Matrix4x4 
     m_shader.SetUniformMat4f("u_projection", projection);
     m_shader.SetUniformMat4f("u_view", view);
     m_shader.SetUniform3f("u_color", m_linesColor);
-    m_transform = m_positionMatrix * m_scaleMatrix * m_rotationMatrix;
-
+    m_shader.SetUniform3f("u_lightPosition", s21::Vector3(2.0, 2.0, 2.0));
+    m_shader.SetUniform3f("u_lightColor", s21::Vector3(1.0, 0.0, 0.0));
+    m_transform = m_positionMatrix *m_rotationMatrix* m_scaleMatrix;
+    m_texture.Bind();
+    m_shader.SetUniform1i("u_texDiffuse", 0);
     m_shader.SetUniformMat4f("u_model", m_transform);
 
     if (m_drawMode == DrawMode::LINES) {
         m_functions->glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_eboLines);
-        m_functions->glDrawElements(GL_LINES, m_loader.GetFaces().size() * 3, GL_UNSIGNED_INT, 0);
+        m_functions->glDrawElements(GL_LINES, m_loader.GetIndices().size() * 3, GL_UNSIGNED_INT, 0);
     } else if (m_drawMode == DrawMode::TRIANGLES) {
         m_functions->glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_eboTriangles);
-        m_functions->glDrawElements(GL_TRIANGLES, m_loader.GetFaces().size(), GL_UNSIGNED_INT, 0);
+        m_functions->glDrawElements(GL_TRIANGLES, m_loader.GetIndices().size(), GL_UNSIGNED_INT, 0);
+    }
+
+    GLenum err;
+    while ((err = m_functions->glGetError()) != GL_NO_ERROR) {
+        std::cerr << "OpenGL error: " << err << std::endl;
     }
 
     m_functions->glBindVertexArray(0);

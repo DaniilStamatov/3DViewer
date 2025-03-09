@@ -48,16 +48,19 @@ void OpenGLWindow::initializeGL() {
     functions = QOpenGLContext::currentContext()->extraFunctions();
     functions->initializeOpenGLFunctions();
     this->makeCurrent();
-    functions->glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+    functions->glClearColor(0.3f, 0.4f, 0.5f, 1.0f);
     functions->glEnableVertexAttribArray(0);
     functions->glBindVertexArray(0);
+    glEnable(GL_DEPTH_TEST);
+    glDepthFunc(GL_LESS);
+    glEnable(GL_CULL_FACE);
+    glCullFace(GL_FRONT); 
 }
 
 void OpenGLWindow::resizeGL(int w, int h) { glViewport(0, 0, w, h); }
 
 void OpenGLWindow::paintGL() {
     functions->glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    functions->glEnable(GL_DEPTH_TEST);
     auto currentFrameTime = std::chrono::high_resolution_clock::now();
     deltaTime = std::chrono::duration<float>(currentFrameTime - lastFrame).count();
     lastFrame = currentFrameTime;

@@ -1,8 +1,12 @@
 3DViewer_autogen/timestamp: \
 	/home/daniil/Documents/3DViewer/src/CMakeLists.txt \
-	/home/daniil/Documents/3DViewer/src/Camera/camera.h \
+	/home/daniil/Documents/3DViewer/src/Camera/Camera.h \
 	/home/daniil/Documents/3DViewer/src/Controller/ModelController.cpp \
 	/home/daniil/Documents/3DViewer/src/Controller/ModelController.h \
+	/home/daniil/Documents/3DViewer/src/Loader.cpp \
+	/home/daniil/Documents/3DViewer/src/Loader.h \
+	/home/daniil/Documents/3DViewer/src/OpenGl/Texture.cpp \
+	/home/daniil/Documents/3DViewer/src/OpenGl/Texture.h \
 	/home/daniil/Documents/3DViewer/src/UI/ArrowButton.h \
 	/home/daniil/Documents/3DViewer/src/UI/MainWindow.cpp \
 	/home/daniil/Documents/3DViewer/src/UI/MainWindow.h \
@@ -13,8 +17,6 @@
 	/home/daniil/Documents/3DViewer/src/build/3DViewer_autogen/moc_predefs.h \
 	/home/daniil/Documents/3DViewer/src/build/CMakeFiles/3.31.5/CMakeCXXCompiler.cmake \
 	/home/daniil/Documents/3DViewer/src/build/CMakeFiles/3.31.5/CMakeSystem.cmake \
-	/home/daniil/Documents/3DViewer/src/loader.cpp \
-	/home/daniil/Documents/3DViewer/src/loader.h \
 	/home/daniil/Documents/3DViewer/src/main.cpp \
 	/home/daniil/Documents/3DViewer/src/model.h \
 	/home/daniil/Documents/3DViewer/src/shader/shader.cpp \
@@ -22,6 +24,8 @@
 	/home/daniil/Documents/3DViewer/src/transformations/mat4.h \
 	/home/daniil/Documents/3DViewer/src/transformations/transformation.cpp \
 	/home/daniil/Documents/3DViewer/src/transformations/transformation.h \
+	/home/daniil/Documents/3DViewer/src/vendor/stb_image.cpp \
+	/home/daniil/Documents/3DViewer/src/vendor/stb_image.h \
 	/usr/include/GL/gl.h \
 	/usr/include/alloca.h \
 	/usr/include/asm-generic/errno-base.h \

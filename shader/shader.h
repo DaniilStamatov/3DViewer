@@ -18,7 +18,7 @@ class Shader {
         : m_functions(other.m_functions),
           m_rendererID(other.m_rendererID),
           m_filepath(other.m_filepath),
-          m_UniformLocationCashe(other.m_UniformLocationCashe)  // Копируем кэш расположений uniform
+          m_UniformLocationCashe(other.m_UniformLocationCashe)
     {
         ShaderProgramSource source = ParseShader(m_filepath);
         m_rendererID = CreateShader(source.VertexSource, source.FragmentSource);
@@ -41,6 +41,7 @@ class Shader {
     void Unbind();
     void SetUniformMat4f(const std::string &name, const s21::Matrix4x4 &mat);
     void SetUniform3f(const std::string &name, const s21::Vector3 &vector);
+    void SetUniform1i(const std::string &name, int num);
 
     uint GetRendererID() const;
     ~Shader();

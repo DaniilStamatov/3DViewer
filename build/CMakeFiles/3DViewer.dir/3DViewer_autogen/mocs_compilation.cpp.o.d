@@ -390,7 +390,7 @@ CMakeFiles/3DViewer.dir/3DViewer_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtWidgets/qboxlayout.h \
  /usr/include/qt6/QtWidgets/qgridlayout.h \
  /usr/include/qt6/QtWidgets/QWidget \
- /home/daniil/Documents/3DViewer/src/build/3DViewer_autogen/KRKR4BN5RM/../../../UI/../Camera/camera.h \
+ /home/daniil/Documents/3DViewer/src/build/3DViewer_autogen/KRKR4BN5RM/../../../UI/../Camera/Camera.h \
  /home/daniil/Documents/3DViewer/src/build/3DViewer_autogen/KRKR4BN5RM/../../../UI/../Camera/../transformations/transformation.h \
  /home/daniil/Documents/3DViewer/src/build/3DViewer_autogen/KRKR4BN5RM/../../../UI/../Camera/../transformations/mat4.h \
  /usr/include/c++/14.2.1/iostream /usr/include/c++/14.2.1/ostream \
@@ -406,7 +406,7 @@ CMakeFiles/3DViewer.dir/3DViewer_autogen/mocs_compilation.cpp.o: \
  /usr/include/c++/14.2.1/bits/istream.tcc \
  /home/daniil/Documents/3DViewer/src/build/3DViewer_autogen/KRKR4BN5RM/../../../UI/../Controller/ModelController.h \
  /home/daniil/Documents/3DViewer/src/build/3DViewer_autogen/KRKR4BN5RM/../../../UI/../Controller/../UI/ModelRenderer.h \
- /home/daniil/Documents/3DViewer/src/build/3DViewer_autogen/KRKR4BN5RM/../../../UI/../Controller/../UI/../loader.h \
+ /home/daniil/Documents/3DViewer/src/build/3DViewer_autogen/KRKR4BN5RM/../../../UI/../Controller/../UI/../Loader.h \
  /usr/include/c++/14.2.1/sstream /usr/include/c++/14.2.1/bits/sstream.tcc \
  /home/daniil/Documents/3DViewer/src/build/3DViewer_autogen/KRKR4BN5RM/../../../UI/../Controller/../UI/../model.h \
  /usr/include/c++/14.2.1/fstream /usr/include/c++/14.2.1/bits/codecvt.h \
@@ -414,5 +414,7 @@ CMakeFiles/3DViewer.dir/3DViewer_autogen/mocs_compilation.cpp.o: \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++io.h \
  /usr/include/c++/14.2.1/bits/fstream.tcc \
  /home/daniil/Documents/3DViewer/src/build/3DViewer_autogen/KRKR4BN5RM/../../../UI/../Controller/../UI/../shader/shader.h \
+ /home/daniil/Documents/3DViewer/src/build/3DViewer_autogen/KRKR4BN5RM/../../../UI/../Controller/../UI/../OpenGl/Texture.h \
+ /home/daniil/Documents/3DViewer/src/build/3DViewer_autogen/KRKR4BN5RM/../../../UI/../Controller/../UI/../OpenGl/../vendor/stb_image.h \
  /usr/include/qt6/QtCore/qtmochelpers.h \
  /home/daniil/Documents/3DViewer/src/build/3DViewer_autogen/KRKR4BN5RM/moc_OpenGLWindow.cpp

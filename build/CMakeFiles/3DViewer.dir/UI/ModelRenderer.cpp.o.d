@@ -343,7 +343,7 @@ CMakeFiles/3DViewer.dir/UI/ModelRenderer.cpp.o: \
  /usr/include/qt6/QtGui/qfontinfo.h \
  /usr/include/qt6/QtWidgets/qsizepolicy.h \
  /usr/include/qt6/QtGui/qcursor.h /usr/include/qt6/QtGui/qbitmap.h \
- /home/daniil/Documents/3DViewer/src/UI/../loader.h \
+ /home/daniil/Documents/3DViewer/src/UI/../Loader.h \
  /usr/include/c++/14.2.1/iostream /usr/include/c++/14.2.1/ostream \
  /usr/include/c++/14.2.1/ios /usr/include/c++/14.2.1/bits/basic_ios.h \
  /usr/include/c++/14.2.1/bits/locale_facets.h \
@@ -363,4 +363,6 @@ CMakeFiles/3DViewer.dir/UI/ModelRenderer.cpp.o: \
  /usr/include/c++/14.2.1/bits/fstream.tcc \
  /home/daniil/Documents/3DViewer/src/UI/../transformations/transformation.h \
  /home/daniil/Documents/3DViewer/src/UI/../transformations/mat4.h \
- /home/daniil/Documents/3DViewer/src/UI/../shader/shader.h
+ /home/daniil/Documents/3DViewer/src/UI/../shader/shader.h \
+ /home/daniil/Documents/3DViewer/src/UI/../OpenGl/Texture.h \
+ /home/daniil/Documents/3DViewer/src/UI/../OpenGl/../vendor/stb_image.h

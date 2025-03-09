@@ -203,6 +203,54 @@ Controller/ModelController.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/Controller/ModelController.cpp.s
 .PHONY : Controller/ModelController.cpp.s
 
+Loader.o: Loader.cpp.o
+.PHONY : Loader.o
+
+# target to build an object file
+Loader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/Loader.cpp.o
+.PHONY : Loader.cpp.o
+
+Loader.i: Loader.cpp.i
+.PHONY : Loader.i
+
+# target to preprocess a source file
+Loader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/Loader.cpp.i
+.PHONY : Loader.cpp.i
+
+Loader.s: Loader.cpp.s
+.PHONY : Loader.s
+
+# target to generate assembly for a file
+Loader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/Loader.cpp.s
+.PHONY : Loader.cpp.s
+
+OpenGl/Texture.o: OpenGl/Texture.cpp.o
+.PHONY : OpenGl/Texture.o
+
+# target to build an object file
+OpenGl/Texture.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/OpenGl/Texture.cpp.o
+.PHONY : OpenGl/Texture.cpp.o
+
+OpenGl/Texture.i: OpenGl/Texture.cpp.i
+.PHONY : OpenGl/Texture.i
+
+# target to preprocess a source file
+OpenGl/Texture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/OpenGl/Texture.cpp.i
+.PHONY : OpenGl/Texture.cpp.i
+
+OpenGl/Texture.s: OpenGl/Texture.cpp.s
+.PHONY : OpenGl/Texture.s
+
+# target to generate assembly for a file
+OpenGl/Texture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/OpenGl/Texture.cpp.s
+.PHONY : OpenGl/Texture.cpp.s
+
 UI/MainWindow.o: UI/MainWindow.cpp.o
 .PHONY : UI/MainWindow.o
 
@@ -274,30 +322,6 @@ UI/OpenGLWindow.s: UI/OpenGLWindow.cpp.s
 UI/OpenGLWindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/UI/OpenGLWindow.cpp.s
 .PHONY : UI/OpenGLWindow.cpp.s
-
-loader.o: loader.cpp.o
-.PHONY : loader.o
-
-# target to build an object file
-loader.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/loader.cpp.o
-.PHONY : loader.cpp.o
-
-loader.i: loader.cpp.i
-.PHONY : loader.i
-
-# target to preprocess a source file
-loader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/loader.cpp.i
-.PHONY : loader.cpp.i
-
-loader.s: loader.cpp.s
-.PHONY : loader.s
-
-# target to generate assembly for a file
-loader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/loader.cpp.s
-.PHONY : loader.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -371,6 +395,30 @@ transformations/transformation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/transformations/transformation.cpp.s
 .PHONY : transformations/transformation.cpp.s
 
+vendor/stb_image.o: vendor/stb_image.cpp.o
+.PHONY : vendor/stb_image.o
+
+# target to build an object file
+vendor/stb_image.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/vendor/stb_image.cpp.o
+.PHONY : vendor/stb_image.cpp.o
+
+vendor/stb_image.i: vendor/stb_image.cpp.i
+.PHONY : vendor/stb_image.i
+
+# target to preprocess a source file
+vendor/stb_image.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/vendor/stb_image.cpp.i
+.PHONY : vendor/stb_image.cpp.i
+
+vendor/stb_image.s: vendor/stb_image.cpp.s
+.PHONY : vendor/stb_image.s
+
+# target to generate assembly for a file
+vendor/stb_image.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/vendor/stb_image.cpp.s
+.PHONY : vendor/stb_image.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -388,6 +436,12 @@ help:
 	@echo "... Controller/ModelController.o"
 	@echo "... Controller/ModelController.i"
 	@echo "... Controller/ModelController.s"
+	@echo "... Loader.o"
+	@echo "... Loader.i"
+	@echo "... Loader.s"
+	@echo "... OpenGl/Texture.o"
+	@echo "... OpenGl/Texture.i"
+	@echo "... OpenGl/Texture.s"
 	@echo "... UI/MainWindow.o"
 	@echo "... UI/MainWindow.i"
 	@echo "... UI/MainWindow.s"
@@ -397,9 +451,6 @@ help:
 	@echo "... UI/OpenGLWindow.o"
 	@echo "... UI/OpenGLWindow.i"
 	@echo "... UI/OpenGLWindow.s"
-	@echo "... loader.o"
-	@echo "... loader.i"
-	@echo "... loader.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
@@ -409,6 +460,9 @@ help:
 	@echo "... transformations/transformation.o"
 	@echo "... transformations/transformation.i"
 	@echo "... transformations/transformation.s"
+	@echo "... vendor/stb_image.o"
+	@echo "... vendor/stb_image.i"
+	@echo "... vendor/stb_image.s"
 .PHONY : help
 
 

@@ -20,9 +20,11 @@ set(PROJECT_SOURCES
     UI/ModelRenderer.cpp
     Controller/ModelController.cpp
     main.cpp
-    loader.cpp
+    Loader.cpp
     transformations/transformation.cpp
     shader/shader.cpp
+    OpenGl/Texture.cpp
+    vendor/stb_image.cpp
 )
 
 # Создание исполняемого файла

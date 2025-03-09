@@ -162,19 +162,19 @@ CMakeFiles/3DViewer.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/3DViewer.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniil/Documents/3DViewer/src/main.cpp -o CMakeFiles/3DViewer.dir/main.cpp.s
 
-CMakeFiles/3DViewer.dir/loader.cpp.o: CMakeFiles/3DViewer.dir/flags.make
-CMakeFiles/3DViewer.dir/loader.cpp.o: /home/daniil/Documents/3DViewer/src/loader.cpp
-CMakeFiles/3DViewer.dir/loader.cpp.o: CMakeFiles/3DViewer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/daniil/Documents/3DViewer/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/3DViewer.dir/loader.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/3DViewer.dir/loader.cpp.o -MF CMakeFiles/3DViewer.dir/loader.cpp.o.d -o CMakeFiles/3DViewer.dir/loader.cpp.o -c /home/daniil/Documents/3DViewer/src/loader.cpp
+CMakeFiles/3DViewer.dir/Loader.cpp.o: CMakeFiles/3DViewer.dir/flags.make
+CMakeFiles/3DViewer.dir/Loader.cpp.o: /home/daniil/Documents/3DViewer/src/Loader.cpp
+CMakeFiles/3DViewer.dir/Loader.cpp.o: CMakeFiles/3DViewer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/daniil/Documents/3DViewer/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/3DViewer.dir/Loader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/3DViewer.dir/Loader.cpp.o -MF CMakeFiles/3DViewer.dir/Loader.cpp.o.d -o CMakeFiles/3DViewer.dir/Loader.cpp.o -c /home/daniil/Documents/3DViewer/src/Loader.cpp
 
-CMakeFiles/3DViewer.dir/loader.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/3DViewer.dir/loader.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniil/Documents/3DViewer/src/loader.cpp > CMakeFiles/3DViewer.dir/loader.cpp.i
+CMakeFiles/3DViewer.dir/Loader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/3DViewer.dir/Loader.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniil/Documents/3DViewer/src/Loader.cpp > CMakeFiles/3DViewer.dir/Loader.cpp.i
 
-CMakeFiles/3DViewer.dir/loader.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/3DViewer.dir/loader.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniil/Documents/3DViewer/src/loader.cpp -o CMakeFiles/3DViewer.dir/loader.cpp.s
+CMakeFiles/3DViewer.dir/Loader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/3DViewer.dir/Loader.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniil/Documents/3DViewer/src/Loader.cpp -o CMakeFiles/3DViewer.dir/Loader.cpp.s
 
 CMakeFiles/3DViewer.dir/transformations/transformation.cpp.o: CMakeFiles/3DViewer.dir/flags.make
 CMakeFiles/3DViewer.dir/transformations/transformation.cpp.o: /home/daniil/Documents/3DViewer/src/transformations/transformation.cpp
@@ -204,6 +204,34 @@ CMakeFiles/3DViewer.dir/shader/shader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/3DViewer.dir/shader/shader.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniil/Documents/3DViewer/src/shader/shader.cpp -o CMakeFiles/3DViewer.dir/shader/shader.cpp.s
 
+CMakeFiles/3DViewer.dir/OpenGl/Texture.cpp.o: CMakeFiles/3DViewer.dir/flags.make
+CMakeFiles/3DViewer.dir/OpenGl/Texture.cpp.o: /home/daniil/Documents/3DViewer/src/OpenGl/Texture.cpp
+CMakeFiles/3DViewer.dir/OpenGl/Texture.cpp.o: CMakeFiles/3DViewer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/daniil/Documents/3DViewer/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/3DViewer.dir/OpenGl/Texture.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/3DViewer.dir/OpenGl/Texture.cpp.o -MF CMakeFiles/3DViewer.dir/OpenGl/Texture.cpp.o.d -o CMakeFiles/3DViewer.dir/OpenGl/Texture.cpp.o -c /home/daniil/Documents/3DViewer/src/OpenGl/Texture.cpp
+
+CMakeFiles/3DViewer.dir/OpenGl/Texture.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/3DViewer.dir/OpenGl/Texture.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniil/Documents/3DViewer/src/OpenGl/Texture.cpp > CMakeFiles/3DViewer.dir/OpenGl/Texture.cpp.i
+
+CMakeFiles/3DViewer.dir/OpenGl/Texture.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/3DViewer.dir/OpenGl/Texture.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniil/Documents/3DViewer/src/OpenGl/Texture.cpp -o CMakeFiles/3DViewer.dir/OpenGl/Texture.cpp.s
+
+CMakeFiles/3DViewer.dir/vendor/stb_image.cpp.o: CMakeFiles/3DViewer.dir/flags.make
+CMakeFiles/3DViewer.dir/vendor/stb_image.cpp.o: /home/daniil/Documents/3DViewer/src/vendor/stb_image.cpp
+CMakeFiles/3DViewer.dir/vendor/stb_image.cpp.o: CMakeFiles/3DViewer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/daniil/Documents/3DViewer/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/3DViewer.dir/vendor/stb_image.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/3DViewer.dir/vendor/stb_image.cpp.o -MF CMakeFiles/3DViewer.dir/vendor/stb_image.cpp.o.d -o CMakeFiles/3DViewer.dir/vendor/stb_image.cpp.o -c /home/daniil/Documents/3DViewer/src/vendor/stb_image.cpp
+
+CMakeFiles/3DViewer.dir/vendor/stb_image.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/3DViewer.dir/vendor/stb_image.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniil/Documents/3DViewer/src/vendor/stb_image.cpp > CMakeFiles/3DViewer.dir/vendor/stb_image.cpp.i
+
+CMakeFiles/3DViewer.dir/vendor/stb_image.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/3DViewer.dir/vendor/stb_image.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniil/Documents/3DViewer/src/vendor/stb_image.cpp -o CMakeFiles/3DViewer.dir/vendor/stb_image.cpp.s
+
 # Object files for target 3DViewer
 3DViewer_OBJECTS = \
 "CMakeFiles/3DViewer.dir/3DViewer_autogen/mocs_compilation.cpp.o" \
@@ -212,9 +240,11 @@ CMakeFiles/3DViewer.dir/shader/shader.cpp.s: cmake_force
 "CMakeFiles/3DViewer.dir/UI/ModelRenderer.cpp.o" \
 "CMakeFiles/3DViewer.dir/Controller/ModelController.cpp.o" \
 "CMakeFiles/3DViewer.dir/main.cpp.o" \
-"CMakeFiles/3DViewer.dir/loader.cpp.o" \
+"CMakeFiles/3DViewer.dir/Loader.cpp.o" \
 "CMakeFiles/3DViewer.dir/transformations/transformation.cpp.o" \
-"CMakeFiles/3DViewer.dir/shader/shader.cpp.o"
+"CMakeFiles/3DViewer.dir/shader/shader.cpp.o" \
+"CMakeFiles/3DViewer.dir/OpenGl/Texture.cpp.o" \
+"CMakeFiles/3DViewer.dir/vendor/stb_image.cpp.o"
 
 # External object files for target 3DViewer
 3DViewer_EXTERNAL_OBJECTS =
@@ -225,9 +255,11 @@ CMakeFiles/3DViewer.dir/shader/shader.cpp.s: cmake_force
 3DViewer: CMakeFiles/3DViewer.dir/UI/ModelRenderer.cpp.o
 3DViewer: CMakeFiles/3DViewer.dir/Controller/ModelController.cpp.o
 3DViewer: CMakeFiles/3DViewer.dir/main.cpp.o
-3DViewer: CMakeFiles/3DViewer.dir/loader.cpp.o
+3DViewer: CMakeFiles/3DViewer.dir/Loader.cpp.o
 3DViewer: CMakeFiles/3DViewer.dir/transformations/transformation.cpp.o
 3DViewer: CMakeFiles/3DViewer.dir/shader/shader.cpp.o
+3DViewer: CMakeFiles/3DViewer.dir/OpenGl/Texture.cpp.o
+3DViewer: CMakeFiles/3DViewer.dir/vendor/stb_image.cpp.o
 3DViewer: CMakeFiles/3DViewer.dir/build.make
 3DViewer: CMakeFiles/3DViewer.dir/compiler_depend.ts
 3DViewer: /usr/lib/libQt6OpenGLWidgets.so.6.8.1
@@ -241,7 +273,7 @@ CMakeFiles/3DViewer.dir/shader/shader.cpp.s: cmake_force
 3DViewer: /usr/lib/libOpenGL.so
 3DViewer: /usr/lib/libQt6Core.so.6.8.1
 3DViewer: CMakeFiles/3DViewer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/daniil/Documents/3DViewer/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable 3DViewer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/daniil/Documents/3DViewer/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable 3DViewer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/3DViewer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

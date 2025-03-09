@@ -4,6 +4,7 @@
 
 #include "../Loader.h"
 #include "../shader/shader.h"
+#include "../OpenGl/Texture.h"
 enum class DrawMode { TRIANGLES, LINES };
 
 class ModelRenderer : QOpenGLExtraFunctions {
@@ -33,11 +34,14 @@ class ModelRenderer : QOpenGLExtraFunctions {
     s21::Matrix4x4 m_scaleMatrix;
     s21::Matrix4x4 m_transform;
     s21::Vector3 m_linesColor;
+    Texture m_texture;
     Shader m_shader;
 
     DrawMode m_drawMode = DrawMode::TRIANGLES;
     unsigned int m_vao;
     unsigned int m_vbo;
+    unsigned int m_normalVBO;
+    unsigned int m_normalEBO;
     unsigned int m_eboLines;
     unsigned int m_eboTriangles;
 };

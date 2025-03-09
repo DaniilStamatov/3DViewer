@@ -11,13 +11,11 @@ void s21::Loader::LoadFromFile(const std::string &filename) {
         std::istringstream iss(line);
         std::string prefix;
         iss >> prefix;
-        if (prefix == "v") {
+       if (prefix == "v") {
             Vector3 vertex;
             if (iss >> vertex.x >> vertex.y >> vertex.z) {
                 m_verticies.push_back(vertex);
             }
-        } else if (prefix == "f") {
-            ParseFace(iss);
         } else if (prefix == "vt") {
             Vector2 texCoord;
             if (iss >> texCoord.x >> texCoord.y) {
@@ -25,62 +23,127 @@ void s21::Loader::LoadFromFile(const std::string &filename) {
             }
         } else if (prefix == "vn") {
             Vector3 normal;
-            if (iss >> normal.x >> normal.y) {
+            if (iss >> normal.x >> normal.y >> normal.z) {
                 m_normals.push_back(normal);
+            }
+        } else if (prefix == "f") {
+            std::vector<Vertex> verts;
+            ParseFace(verts, iss);
+            for (int i = 0; i < int(verts.size()); i++)
+			{
+				m_vertices.push_back(verts[i]);
+			}
+            std::vector<unsigned int> indices;
+            VertexTriangluation(indices, verts);
+            for(int i = 0; i < int(indices.size()); i++) {
+                unsigned int indnum = (unsigned int)((m_vertices.size()) - verts.size()) + indices[i];
+				m_indices.push_back(indnum);
             }
         }
     }
+
 }
 
-void s21::Loader::ParseFace(std::istringstream &stream) {
-    std::vector<FaceVertex> faceVertices;
+void s21::Loader::ParseFace(std::vector<Vertex>& verts, std::istringstream &stream) {
     std::string token;
+    Vertex vertex;
+    bool noNormal = false;
     while (stream >> token) {
         size_t firstSlash = token.find("/");
         size_t secondSlash = token.find("/", firstSlash + 1);
-        FaceVertex faceVertex;
-        faceVertex.vertexIndex = std::stoi(token.substr(0, firstSlash)) - 1;
+        vertex.position = m_verticies[std::stoi(token.substr(0, firstSlash)) - 1];
         if (firstSlash != std::string::npos) {
             if (secondSlash != std::string::npos) {
                 std::string tex = token.substr(firstSlash + 1, secondSlash - firstSlash - 1);
-                faceVertex.textureIndex = tex.empty() ? -1 : std::stoi(tex) - 1;
-                faceVertex.normalIndex = std::stoi(token.substr(secondSlash + 1)) - 1;
+                vertex.texture = tex.empty() ? Vector2(0,0) : m_texCoords[std::stoi(tex) - 1];
+                 noNormal = true;
+               
             } else {
-                faceVertex.textureIndex = std::stoi(token.substr(firstSlash + 1)) - 1;
-                faceVertex.normalIndex = -1;
+                vertex.texture = m_texCoords[std::stoi(token.substr(firstSlash + 1)) - 1];
+                noNormal = true;
             }
         } else {
-            faceVertex.textureIndex = -1;
-            faceVertex.normalIndex = -1;
+            vertex.texture = Vector2(0, 0);
+            noNormal = true;
         }
-        faceVertices.push_back(faceVertex);
+        verts.push_back(vertex);
     }
+    if(noNormal) {
+        Vector3 A = verts[0].position - verts[1].position;
+        Vector3 B = verts[2].position - verts[1].position;
+        Vector3 normal = normalize(A.cross(B));
+        RoundNormal(normal);
 
-    size_t n = faceVertices.size();
-    m_faceVerticies.reserve(n - 2);
-    for (size_t i = 1; i < n - 1; ++i) {
-        FaceVertex v1 = faceVertices[0];
-        FaceVertex v2 = faceVertices[i];
-        FaceVertex v3 = faceVertices[i + 1];
-
-        m_faceVerticies.push_back(v1);
-        m_faceVerticies.push_back(v2);
-        m_faceVerticies.push_back(v3);
+        for(auto& vert:verts) {
+            vert.normal = normal;
+        }
     }
 }
 
-std::vector<s21::Vector3> s21::Loader::GetVerticies() const { return m_verticies; }
+void s21::Loader::VertexTriangluation(std::vector<unsigned int> &indices, const std::vector<Vertex>& verts) {
+    if(verts.size() == 3) {
+         indices = {0, 1, 2};
+         return;
+    }
+    std::vector<Vertex> tempVerts = verts;
 
-std::vector<s21::Vector2> s21::Loader::GetTexturesCoords() const { return m_texCoords; }
+    while (true)
+	{
+        for (int i = 0; i < int(tempVerts.size()); i++)
+		{
+            Vertex pPrev = tempVerts[(i - 1 + tempVerts.size()) % tempVerts.size()];
+            Vertex pCur = tempVerts[i];
+            Vertex pNext = tempVerts[(i + 1) % tempVerts.size()];
+            if (tempVerts.size() == 3) {
+                for (int j = 0; j < 3; j++) {
+                    indices.push_back(j);
+                }
+            
+                tempVerts.clear();
+                break;
+            }
+            if (tempVerts.size() == 4) {
+                for (const auto& vert : verts) {
+                    if (vert.position == pCur.position || vert.position == pPrev.position || vert.position == pNext.position) {
+                        indices.push_back(&vert - &verts[0]); 
+                    }
+                }
 
-std::vector<s21::Vector3> s21::Loader::GetNormals() const { return m_normals; }
+                Vector3 tempVec;
+                for (const auto& vert : tempVerts) {
+                    if (!(vert.position == pCur.position) && !(vert.position == pPrev.position) && !(vert.position == pNext.position)) {
+                        tempVec = vert.position;
+                        break;
+                    }
+                }
+
+                for (const auto& vert : verts) {
+                    if (vert.position == pPrev.position || vert.position == pNext.position || vert.position == tempVec) {
+                        indices.push_back(&vert - &verts[0]);
+                    }
+                }
+                tempVerts.clear();
+                break;
+}
+        }
+        if (indices.size() == 0)
+			break;
+
+	    if (tempVerts.size() == 0)
+			break;
+    }
+}
+
+std::vector<s21::Vertex> s21::Loader::GetVerticies() const { return m_vertices; }
 
 std::vector<s21::FaceVertex> s21::Loader::GetFaces() const { return m_faceVerticies; }
-
+std::vector<unsigned int> s21::Loader::GetIndices() const { return m_indices; }
 void s21::Loader::PrintLoadedInfo() {
-    std::cout << "Loaded Vertices: " << m_verticies.size() << std::endl;
-    for (const auto &vertex : m_verticies) {
-        std::cout << "Vertex: (" << vertex.x << ", " << vertex.y << ", " << vertex.z << ")" << std::endl;
+    std::cout << "Loaded Vertices: " << m_vertices.size() << std::endl;
+    for (const auto &vertex : m_vertices) {
+        std::cout << "Vertex Position: (" << vertex.position.x << ", " << vertex.position.y << ", " << vertex.position.z << ")" << std::endl;
+        std::cout << "Normal: (" << vertex.normal.x << ", " << vertex.normal.y << ", " << vertex.normal.z << ")" << std::endl;
+        std::cout << "Texture Coordinate: (" << vertex.texture.x << ", " << vertex.texture.y << ")" << std::endl;
     }
 
     std::cout << "Loaded Texture Coordinates: " << m_texCoords.size() << std::endl;
@@ -94,15 +157,27 @@ void s21::Loader::PrintLoadedInfo() {
     }
 
     std::cout << "Loaded Faces: " << m_faceVerticies.size() << std::endl;
-    for (const auto &face : m_faceVerticies) {
-        std::cout << "Face: Vertex Index: " << face.vertexIndex << ", Texture Index: " << face.textureIndex
-                  << ", Normal Index: " << face.normalIndex << std::endl;
+    for (size_t i = 0; i < m_faceVerticies.size(); i += 3) {
+        std::cout << "Face " << (i / 3) + 1 << ":" << std::endl;
+        std::cout << "  Vertex Index 1: " << m_faceVerticies[i].vertexIndex << ", Texture Index: " << m_faceVerticies[i].textureIndex
+                  << ", Normal Index: " << m_faceVerticies[i].normalIndex << std::endl;
+        std::cout << "  Vertex Index 2: " << m_faceVerticies[i + 1].vertexIndex << ", Texture Index: " << m_faceVerticies[i + 1].textureIndex
+                  << ", Normal Index: " << m_faceVerticies[i + 1].normalIndex << std::endl;
+        std::cout << "  Vertex Index 3: " << m_faceVerticies[i + 2].vertexIndex << ", Texture Index: " << m_faceVerticies[i + 2].textureIndex
+                  << ", Normal Index: " << m_faceVerticies[i + 2].normalIndex << std::endl;
     }
 }
 
 void s21::Loader::Clear() {
+    m_vertices.clear();
     m_verticies.clear();
     m_normals.clear();
     m_texCoords.clear();
     m_faceVerticies.clear();
+}
+
+void s21::Loader::RoundNormal(Vector3& normal) {
+    if(std::abs(normal.x) <= 1e-5) normal.x = 0.0;
+    if(std::abs(normal.y) <= 1e-5) normal.y = 0.0;
+    if(std::abs(normal.z) <= 1e-5) normal.z = 0.0;
 }

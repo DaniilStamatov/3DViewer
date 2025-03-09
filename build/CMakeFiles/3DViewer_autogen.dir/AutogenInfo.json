@@ -461,6 +461,18 @@
 			null
 		],
 		[
+			"/home/daniil/Documents/3DViewer/src/Loader.h",
+			"Mu",
+			"EWIEGA46WW/moc_Loader.cpp",
+			null
+		],
+		[
+			"/home/daniil/Documents/3DViewer/src/OpenGl/Texture.h",
+			"Mu",
+			"HZSXOWOKNM/moc_Texture.cpp",
+			null
+		],
+		[
 			"/home/daniil/Documents/3DViewer/src/UI/ArrowButton.h",
 			"Mu",
 			"KRKR4BN5RM/moc_ArrowButton.cpp",
@@ -485,12 +497,6 @@
 			null
 		],
 		[
-			"/home/daniil/Documents/3DViewer/src/loader.h",
-			"Mu",
-			"EWIEGA46WW/moc_loader.cpp",
-			null
-		],
-		[
 			"/home/daniil/Documents/3DViewer/src/shader/shader.h",
 			"Mu",
 			"Y3UQALW6IS/moc_shader.cpp",
@@ -500,6 +506,12 @@
 			"/home/daniil/Documents/3DViewer/src/transformations/transformation.h",
 			"Mu",
 			"43WND7NQXU/moc_transformation.cpp",
+			null
+		],
+		[
+			"/home/daniil/Documents/3DViewer/src/vendor/stb_image.h",
+			"Mu",
+			"7WIGNMPN73/moc_stb_image.cpp",
 			null
 		]
 	],
@@ -577,6 +589,8 @@
 			"Mu",
 			null
 		],
+		[ "/home/daniil/Documents/3DViewer/src/Loader.cpp", "Mu", null ],
+		[ "/home/daniil/Documents/3DViewer/src/OpenGl/Texture.cpp", "Mu", null ],
 		[ "/home/daniil/Documents/3DViewer/src/UI/MainWindow.cpp", "Mu", null ],
 		[
 			"/home/daniil/Documents/3DViewer/src/UI/ModelRenderer.cpp",
@@ -584,11 +598,15 @@
 			null
 		],
 		[ "/home/daniil/Documents/3DViewer/src/UI/OpenGLWindow.cpp", "Mu", null ],
-		[ "/home/daniil/Documents/3DViewer/src/loader.cpp", "Mu", null ],
 		[ "/home/daniil/Documents/3DViewer/src/main.cpp", "Mu", null ],
 		[ "/home/daniil/Documents/3DViewer/src/shader/shader.cpp", "Mu", null ],
 		[
 			"/home/daniil/Documents/3DViewer/src/transformations/transformation.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/daniil/Documents/3DViewer/src/vendor/stb_image.cpp",
 			"Mu",
 			null
 		]
