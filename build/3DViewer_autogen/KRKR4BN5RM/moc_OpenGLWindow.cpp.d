@@ -9,6 +9,188 @@
   /home/daniil/Documents/3DViewer/src/shader/shader.h \
   /home/daniil/Documents/3DViewer/src/transformations/mat4.h \
   /home/daniil/Documents/3DViewer/src/transformations/transformation.h \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/common.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/_fixes.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/_vectorize.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/compute_common.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/compute_vector_decl.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/compute_vector_relational.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/func_common.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/func_exponential.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/func_geometric.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/func_integer.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/func_matrix.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/func_packing.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/func_trigonometric.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/func_vector_relational.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/qualifier.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/setup.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_float.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_half.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_half.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_mat2x2.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_mat2x2.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_mat2x3.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_mat2x3.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_mat2x4.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_mat2x4.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_mat3x2.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_mat3x2.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_mat3x3.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_mat3x3.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_mat3x4.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_mat3x4.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_mat4x2.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_mat4x2.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_mat4x3.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_mat4x3.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_mat4x4.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_mat4x4.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_quat.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_quat.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_vec1.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_vec1.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_vec2.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_vec2.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_vec3.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_vec3.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_vec4.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/detail/type_vec4.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/exponential.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_clip_space.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_clip_space.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_double2x2.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_double2x2_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_double2x3.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_double2x3_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_double2x4.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_double2x4_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_double3x2.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_double3x2_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_double3x3.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_double3x3_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_double3x4.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_double3x4_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_double4x2.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_double4x2_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_double4x3.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_double4x3_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_double4x4.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_double4x4_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_float2x2.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_float2x2_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_float2x3.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_float2x3_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_float2x4.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_float2x4_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_float3x2.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_float3x2_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_float3x3.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_float3x3_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_float3x4.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_float3x4_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_float4x2.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_float4x2_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_float4x3.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_float4x3_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_float4x4.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_float4x4_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_projection.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_projection.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_transform.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/matrix_transform.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/quaternion_common.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/quaternion_common.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/quaternion_double.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/quaternion_double_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/quaternion_float.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/quaternion_float_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/quaternion_geometric.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/quaternion_geometric.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/quaternion_relational.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/quaternion_relational.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/quaternion_transform.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/quaternion_transform.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/quaternion_trigonometric.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/quaternion_trigonometric.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/scalar_constants.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/scalar_constants.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/scalar_int_sized.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/scalar_uint_sized.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_bool1.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_bool1_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_bool2.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_bool2_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_bool3.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_bool3_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_bool4.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_bool4_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_double1.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_double1_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_double2.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_double2_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_double3.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_double3_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_double4.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_double4_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_float1.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_float1_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_float2.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_float2_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_float3.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_float3_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_float4.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_float4_precision.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_int1.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_int1_sized.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_int2.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_int2_sized.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_int3.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_int3_sized.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_int4.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_int4_sized.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_relational.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_relational.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_uint1.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_uint1_sized.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_uint2.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_uint2_sized.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_uint3.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_uint3_sized.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_uint4.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/ext/vector_uint4_sized.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/fwd.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/geometric.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/glm.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/gtc/constants.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/gtc/constants.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/gtc/epsilon.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/gtc/epsilon.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/gtc/matrix_transform.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/gtc/matrix_transform.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/gtc/quaternion.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/gtc/quaternion.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/gtc/type_ptr.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/gtc/type_ptr.inl \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/gtc/vec1.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/integer.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/mat2x2.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/mat2x3.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/mat2x4.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/mat3x2.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/mat3x3.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/mat3x4.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/mat4x2.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/mat4x3.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/mat4x4.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/matrix.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/packing.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/simd/platform.h \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/trigonometric.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/vec2.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/vec3.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/vec4.hpp \
+  /home/daniil/Documents/3DViewer/src/vendor/glm/vector_relational.hpp \
   /home/daniil/Documents/3DViewer/src/vendor/stb_image.h \
   /usr/include/GL/gl.h \
   /usr/include/alloca.h \
@@ -185,6 +367,7 @@
   /usr/include/c++/14.2.1/cassert \
   /usr/include/c++/14.2.1/cctype \
   /usr/include/c++/14.2.1/cerrno \
+  /usr/include/c++/14.2.1/cfloat \
   /usr/include/c++/14.2.1/chrono \
   /usr/include/c++/14.2.1/climits \
   /usr/include/c++/14.2.1/clocale \
@@ -506,6 +689,7 @@
   /usr/include/time.h \
   /usr/include/wchar.h \
   /usr/include/wctype.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/float.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stdarg.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stdbool.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h

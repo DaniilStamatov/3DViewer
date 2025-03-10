@@ -1,7 +1,9 @@
 #pragma once
 #include <QOpenGLExtraFunctions>
 #include <QOpenGLWidget>
-
+#include "../vendor/glm/glm.hpp"
+#include "../vendor/glm/gtc/matrix_transform.hpp"
+#include "../vendor/glm/gtc/type_ptr.hpp"
 #include "../Loader.h"
 #include "../shader/shader.h"
 #include "../OpenGl/Texture.h"
@@ -24,7 +26,7 @@ class ModelRenderer : QOpenGLExtraFunctions {
     s21::Vector3 GetScale() const;
     void ParseTransform(s21::Vector3& position, s21::Vector3& scale, s21::Vector3& rotation);
     void SwitchDrawMode();
-    void Draw(const s21::Matrix4x4& projection, const s21::Matrix4x4& view);
+    void Draw(const glm::mat4& projection, const s21::Matrix4x4& view);
 
    private:
     QOpenGLExtraFunctions* m_functions;

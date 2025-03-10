@@ -12,7 +12,7 @@ class Camera {
    public:
     Camera(s21::Vector3 position = s21::Vector3(0.0f, 0.0f, -3.0f), s21::Vector3 up = s21::Vector3(0.0f, 1.0f, 0.0f),
            float yaw = YAW, float pitch = PITCH)
-        : m_front(s21::Vector3(0.0f, 0.0f, -1.0f)),
+        : m_front(s21::Vector3(0.0f, 0.0f, 1.0f)),
           m_movementSpeed(SPEED),
           m_mouseSensitivity(SENSITIVITY),
           m_zoom(ZOOM) {
@@ -27,8 +27,8 @@ class Camera {
 
     void ProcessKeyboard(Camera_Movement direction, float deltaTime) {
         float velocity = m_movementSpeed * deltaTime;
-        if (direction == FORWARD) m_position = m_position - (m_front * velocity);
-        if (direction == BACKWARD) m_position = m_position + (m_front * velocity);
+        if (direction == FORWARD) m_position = m_position + (m_front * velocity);
+        if (direction == BACKWARD) m_position = m_position - (m_front * velocity);
         if (direction == LEFT) m_position = m_position - (m_right * velocity);
         if (direction == RIGHT) m_position = m_position + (m_right * velocity);
     }
@@ -37,8 +37,8 @@ class Camera {
         xoffset *= m_mouseSensitivity;
         yoffset *= m_mouseSensitivity;
 
-        m_yaw -= xoffset;
-        m_pitch -= yoffset;
+        m_yaw += xoffset;
+        m_pitch += yoffset;
 
         if (constrainPitch) {
             if (m_pitch > 89.0f) m_pitch = 89.0f;

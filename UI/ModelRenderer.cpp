@@ -18,6 +18,7 @@ ModelRenderer::ModelRenderer(QOpenGLExtraFunctions *functions, const s21::Loader
 ModelRenderer::~ModelRenderer() {}
 
 void ModelRenderer::SetUp() {
+    m_loader.PrintLoadedInfo();
     m_functions->glBindVertexArray(m_vao);
     m_functions->glBindBuffer(GL_ARRAY_BUFFER, m_vbo);
     m_functions->glBufferData(GL_ARRAY_BUFFER, m_loader.GetVerticies().size() * sizeof(s21::Vertex),
@@ -119,7 +120,9 @@ void ModelRenderer::SwitchDrawMode() {
     m_drawMode = m_drawMode == DrawMode::LINES ? DrawMode::TRIANGLES : DrawMode::LINES;
 }
 
-void ModelRenderer::Draw(const s21::Matrix4x4 &projection, const s21::Matrix4x4 &view) {
+void ModelRenderer::Draw(const glm::mat4 &projection, const s21::Matrix4x4 &view) {
+    m_functions-> glEnable(GL_DEPTH_TEST);
+
     m_functions->glBindVertexArray(m_vao);
     m_shader.Bind();
     m_shader.SetUniformMat4f("u_projection", projection);
@@ -127,7 +130,7 @@ void ModelRenderer::Draw(const s21::Matrix4x4 &projection, const s21::Matrix4x4 
     m_shader.SetUniform3f("u_color", m_linesColor);
     m_shader.SetUniform3f("u_lightPosition", s21::Vector3(2.0, 2.0, 2.0));
     m_shader.SetUniform3f("u_lightColor", s21::Vector3(1.0, 0.0, 0.0));
-    m_transform = m_positionMatrix *m_rotationMatrix* m_scaleMatrix;
+    m_transform = m_positionMatrix * m_rotationMatrix * m_scaleMatrix;
     m_texture.Bind();
     m_shader.SetUniform1i("u_texDiffuse", 0);
     m_shader.SetUniformMat4f("u_model", m_transform);

@@ -77,6 +77,10 @@ void Shader::SetUniformMat4f(const std::string &name, const s21::Matrix4x4 &mat)
     m_functions->glUniformMatrix4fv(GetUniformLocation(name), 1, GL_FALSE, mat.GetData());
 }
 
+void Shader::SetUniformMat4f(const std::string &name, const glm::mat4 &mat) {
+    m_functions->glUniformMatrix4fv(GetUniformLocation(name), 1, GL_FALSE, &mat[0][0]);
+}
+
 void Shader::SetUniform3f(const std::string &name, const s21::Vector3 &vec) {
     m_functions->glUniform3f(GetUniformLocation(name), vec.x, vec.y, vec.z);
 }

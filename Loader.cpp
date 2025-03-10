@@ -56,8 +56,8 @@ void s21::Loader::ParseFace(std::vector<Vertex>& verts, std::istringstream &stre
             if (secondSlash != std::string::npos) {
                 std::string tex = token.substr(firstSlash + 1, secondSlash - firstSlash - 1);
                 vertex.texture = tex.empty() ? Vector2(0,0) : m_texCoords[std::stoi(tex) - 1];
-                 noNormal = true;
-               
+                vertex.normal = m_normals[std::stoi(token.substr(secondSlash + 1)) - 1];
+                RoundNormal(vertex.normal); 
             } else {
                 vertex.texture = m_texCoords[std::stoi(token.substr(firstSlash + 1)) - 1];
                 noNormal = true;
@@ -69,15 +69,21 @@ void s21::Loader::ParseFace(std::vector<Vertex>& verts, std::istringstream &stre
         verts.push_back(vertex);
     }
     if(noNormal) {
+        Vector3 normal;
+        for(int i = 0; i < verts.size(); i++) {
+            if(!(verts[i].normal == Vector3(0, 0, 0))) {
+                normal = verts[i].normal;
+                break;
+            }
+        }
         Vector3 A = verts[0].position - verts[1].position;
         Vector3 B = verts[2].position - verts[1].position;
-        Vector3 normal = normalize(A.cross(B));
+        normal = normalize(A.cross(B));
         RoundNormal(normal);
-
         for(auto& vert:verts) {
-            vert.normal = normal;
-        }
+            vert.normal = (normal * -1);
     }
+}
 }
 
 void s21::Loader::VertexTriangluation(std::vector<unsigned int> &indices, const std::vector<Vertex>& verts) {
@@ -141,9 +147,7 @@ std::vector<unsigned int> s21::Loader::GetIndices() const { return m_indices; }
 void s21::Loader::PrintLoadedInfo() {
     std::cout << "Loaded Vertices: " << m_vertices.size() << std::endl;
     for (const auto &vertex : m_vertices) {
-        std::cout << "Vertex Position: (" << vertex.position.x << ", " << vertex.position.y << ", " << vertex.position.z << ")" << std::endl;
-        std::cout << "Normal: (" << vertex.normal.x << ", " << vertex.normal.y << ", " << vertex.normal.z << ")" << std::endl;
-        std::cout << "Texture Coordinate: (" << vertex.texture.x << ", " << vertex.texture.y << ")" << std::endl;
+        std::cout << "" << vertex.position.x << ", " << vertex.position.y << ", " << vertex.position.z << " " << vertex.normal.x << ", " << vertex.normal.y << ", " << vertex.normal.z << std::endl;
     }
 
     std::cout << "Loaded Texture Coordinates: " << m_texCoords.size() << std::endl;

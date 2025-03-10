@@ -7,6 +7,9 @@
 #include <unordered_map>
 
 #include "../transformations/mat4.h"
+#include "../vendor/glm/glm.hpp"
+#include "../vendor/glm/gtc/matrix_transform.hpp"
+#include "../vendor/glm/gtc/type_ptr.hpp"
 struct ShaderProgramSource {
     std::string VertexSource;
     std::string FragmentSource;
@@ -40,6 +43,7 @@ class Shader {
     void Bind();
     void Unbind();
     void SetUniformMat4f(const std::string &name, const s21::Matrix4x4 &mat);
+    void SetUniformMat4f(const std::string &name, const glm::mat4 &mat);
     void SetUniform3f(const std::string &name, const s21::Vector3 &vector);
     void SetUniform1i(const std::string &name, int num);
 

@@ -17,6 +17,9 @@
 #include "../Loader.h"
 #include "../shader/shader.h"
 #include "../transformations/transformation.h"
+#include "../vendor/glm/glm.hpp"
+#include "../vendor/glm/gtc/matrix_transform.hpp"
+#include "../vendor/glm/gtc/type_ptr.hpp"
 #include "ModelRenderer.h"
 
 class OpenGLWindow : public QOpenGLWidget {
@@ -60,7 +63,9 @@ class OpenGLWindow : public QOpenGLWidget {
     std::unique_ptr<ModelController> m_modelController;
     QElapsedTimer m_timer;
     std::chrono::high_resolution_clock::time_point lastFrame;
-
+    unsigned int VBO;
+    unsigned int lightCubeVAO;
+    Shader* lightShader;
     bool isDragging = false;
     QPoint lastMousePos;
      float lastX = 0.0f; // Последняя позиция X
