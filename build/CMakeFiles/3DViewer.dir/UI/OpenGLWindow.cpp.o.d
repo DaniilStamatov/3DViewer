@@ -340,26 +340,15 @@ CMakeFiles/3DViewer.dir/UI/OpenGLWindow.cpp.o: \
  /usr/include/qt6/QtGui/qinputmethod.h /usr/include/qt6/QtCore/qlocale.h \
  /usr/include/qt6/QtGui/qguiapplication_platform.h \
  /usr/include/qt6/QtGui/qkeysequence.h /usr/include/qt6/QtGui/QMouseEvent \
- /usr/include/qt6/QtOpenGL/QOpenGLBuffer \
- /usr/include/qt6/QtOpenGL/qopenglbuffer.h \
- /usr/include/qt6/QtOpenGL/qtopenglglobal.h \
- /usr/include/qt6/QtOpenGL/qtopenglexports.h \
- /usr/include/qt6/QtGui/qopengl.h /usr/include/GL/gl.h \
- /usr/include/qt6/QtGui/qopenglext.h /usr/include/inttypes.h \
  /usr/include/qt6/QtGui/QOpenGLExtraFunctions \
  /usr/include/qt6/QtGui/qopenglextrafunctions.h \
  /usr/include/qt6/QtGui/qopenglfunctions.h \
+ /usr/include/qt6/QtGui/qopengl.h /usr/include/GL/gl.h \
+ /usr/include/qt6/QtGui/qopenglext.h /usr/include/inttypes.h \
  /usr/include/qt6/QtGui/qopenglcontext.h \
  /usr/include/qt6/QtGui/QSurfaceFormat \
  /usr/include/qt6/QtGui/qsurfaceformat.h \
  /usr/include/qt6/QtGui/qopenglcontext_platform.h \
- /usr/include/qt6/QtOpenGL/QOpenGLShaderProgram \
- /usr/include/qt6/QtOpenGL/qopenglshaderprogram.h \
- /usr/include/qt6/QtGui/qvector3d.h /usr/include/qt6/QtGui/qvector4d.h \
- /usr/include/qt6/QtGui/qmatrix4x4.h /usr/include/qt6/QtGui/qquaternion.h \
- /usr/include/qt6/QtGui/qgenericmatrix.h \
- /usr/include/qt6/QtOpenGL/QOpenGLVertexArrayObject \
- /usr/include/qt6/QtOpenGL/qopenglvertexarrayobject.h \
  /usr/include/qt6/QtOpenGLWidgets/QOpenGLWidget \
  /usr/include/qt6/QtOpenGLWidgets/qopenglwidget.h \
  /usr/include/qt6/QtOpenGLWidgets/qtopenglwidgetsglobal.h \
@@ -601,11 +590,24 @@ CMakeFiles/3DViewer.dir/UI/OpenGLWindow.cpp.o: \
  /home/daniil/Documents/3DViewer/src/UI/../Controller/../UI/../vendor/glm/gtc/type_ptr.inl \
  /home/daniil/Documents/3DViewer/src/UI/../Controller/../UI/../Loader.h \
  /usr/include/c++/14.2.1/sstream /usr/include/c++/14.2.1/bits/sstream.tcc \
- /home/daniil/Documents/3DViewer/src/UI/../Controller/../UI/../model.h \
  /usr/include/c++/14.2.1/fstream /usr/include/c++/14.2.1/bits/codecvt.h \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/basic_file.h \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++io.h \
  /usr/include/c++/14.2.1/bits/fstream.tcc \
+ /usr/include/c++/14.2.1/filesystem /usr/include/c++/14.2.1/bits/fs_fwd.h \
+ /usr/include/c++/14.2.1/bits/fs_path.h /usr/include/c++/14.2.1/locale \
+ /usr/include/c++/14.2.1/bits/locale_facets_nonio.h \
+ /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/time_members.h \
+ /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/messages_members.h \
+ /usr/include/libintl.h \
+ /usr/include/c++/14.2.1/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/14.2.1/bits/locale_conv.h \
+ /usr/include/c++/14.2.1/iomanip \
+ /usr/include/c++/14.2.1/bits/quoted_string.h \
+ /usr/include/c++/14.2.1/codecvt /usr/include/c++/14.2.1/bits/fs_dir.h \
+ /usr/include/c++/14.2.1/bits/fs_ops.h \
+ /home/daniil/Documents/3DViewer/src/UI/../Controller/../UI/../model.h \
  /home/daniil/Documents/3DViewer/src/UI/../Controller/../UI/../shader/shader.h \
  /home/daniil/Documents/3DViewer/src/UI/../Controller/../UI/../OpenGl/Texture.h \
- /home/daniil/Documents/3DViewer/src/UI/../Controller/../UI/../OpenGl/../vendor/stb_image.h
+ /home/daniil/Documents/3DViewer/src/UI/../Controller/../UI/../OpenGl/../vendor/stb_image.h \
+ /home/daniil/Documents/3DViewer/src/UI/../Controller/../UI/MeshRenderer.h

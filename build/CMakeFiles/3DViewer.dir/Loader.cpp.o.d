@@ -139,12 +139,46 @@ CMakeFiles/3DViewer.dir/Loader.cpp.o: \
  /usr/include/c++/14.2.1/bits/basic_ios.tcc \
  /usr/include/c++/14.2.1/bits/ostream.tcc /usr/include/c++/14.2.1/istream \
  /usr/include/c++/14.2.1/bits/istream.tcc /usr/include/c++/14.2.1/sstream \
- /usr/include/c++/14.2.1/bits/sstream.tcc \
- /home/daniil/Documents/3DViewer/src/model.h \
- /usr/include/c++/14.2.1/fstream /usr/include/c++/14.2.1/bits/codecvt.h \
+ /usr/include/c++/14.2.1/bits/sstream.tcc /usr/include/c++/14.2.1/fstream \
+ /usr/include/c++/14.2.1/bits/codecvt.h \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/basic_file.h \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++io.h \
- /usr/include/c++/14.2.1/bits/fstream.tcc /usr/include/c++/14.2.1/vector \
+ /usr/include/c++/14.2.1/bits/fstream.tcc \
+ /usr/include/c++/14.2.1/filesystem /usr/include/c++/14.2.1/bits/fs_fwd.h \
+ /usr/include/c++/14.2.1/cstdint \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stdint.h \
+ /usr/include/stdint.h /usr/include/bits/stdint-uintn.h \
+ /usr/include/bits/stdint-least.h /usr/include/c++/14.2.1/bits/chrono.h \
+ /usr/include/c++/14.2.1/ratio /usr/include/c++/14.2.1/limits \
+ /usr/include/c++/14.2.1/ctime \
+ /usr/include/c++/14.2.1/bits/parse_numbers.h \
+ /usr/include/c++/14.2.1/bits/fs_path.h /usr/include/c++/14.2.1/locale \
+ /usr/include/c++/14.2.1/bits/locale_facets_nonio.h \
+ /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/time_members.h \
+ /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/messages_members.h \
+ /usr/include/libintl.h \
+ /usr/include/c++/14.2.1/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/14.2.1/bits/locale_conv.h \
+ /usr/include/c++/14.2.1/iomanip \
+ /usr/include/c++/14.2.1/bits/quoted_string.h \
+ /usr/include/c++/14.2.1/codecvt \
+ /usr/include/c++/14.2.1/ext/concurrence.h \
+ /usr/include/c++/14.2.1/bits/shared_ptr.h \
+ /usr/include/c++/14.2.1/bits/shared_ptr_base.h \
+ /usr/include/c++/14.2.1/bits/allocated_ptr.h \
+ /usr/include/c++/14.2.1/bits/unique_ptr.h \
+ /usr/include/c++/14.2.1/ext/aligned_buffer.h \
+ /usr/include/c++/14.2.1/bits/fs_dir.h \
+ /usr/include/c++/14.2.1/bits/fs_ops.h \
+ /usr/include/c++/14.2.1/unordered_map \
+ /usr/include/c++/14.2.1/bits/unordered_map.h \
+ /usr/include/c++/14.2.1/bits/hashtable.h \
+ /usr/include/c++/14.2.1/bits/hashtable_policy.h \
+ /usr/include/c++/14.2.1/bits/enable_special_members.h \
+ /usr/include/c++/14.2.1/bits/node_handle.h \
+ /usr/include/c++/14.2.1/bits/erase_if.h \
+ /home/daniil/Documents/3DViewer/src/model.h \
+ /usr/include/c++/14.2.1/vector \
  /usr/include/c++/14.2.1/bits/stl_uninitialized.h \
  /usr/include/c++/14.2.1/bits/stl_vector.h \
  /usr/include/c++/14.2.1/bits/stl_bvector.h \
@@ -158,7 +192,7 @@ CMakeFiles/3DViewer.dir/Loader.cpp.o: \
  /usr/include/bits/mathcalls-helper-functions.h \
  /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
  /usr/include/bits/iscanonical.h /usr/include/c++/14.2.1/bits/specfun.h \
- /usr/include/c++/14.2.1/limits /usr/include/c++/14.2.1/tr1/gamma.tcc \
+ /usr/include/c++/14.2.1/tr1/gamma.tcc \
  /usr/include/c++/14.2.1/tr1/special_function_util.h \
  /usr/include/c++/14.2.1/tr1/bessel_function.tcc \
  /usr/include/c++/14.2.1/tr1/beta_function.tcc \
@@ -169,4 +203,12 @@ CMakeFiles/3DViewer.dir/Loader.cpp.o: \
  /usr/include/c++/14.2.1/tr1/modified_bessel_func.tcc \
  /usr/include/c++/14.2.1/tr1/poly_hermite.tcc \
  /usr/include/c++/14.2.1/tr1/poly_laguerre.tcc \
- /usr/include/c++/14.2.1/tr1/riemann_zeta.tcc
+ /usr/include/c++/14.2.1/tr1/riemann_zeta.tcc \
+ /usr/include/c++/14.2.1/algorithm \
+ /usr/include/c++/14.2.1/bits/stl_algo.h \
+ /usr/include/c++/14.2.1/bits/algorithmfwd.h \
+ /usr/include/c++/14.2.1/bits/stl_heap.h \
+ /usr/include/c++/14.2.1/bits/uniform_int_dist.h \
+ /usr/include/c++/14.2.1/bits/stl_tempbuf.h \
+ /usr/include/c++/14.2.1/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/14.2.1/pstl/execution_defs.h

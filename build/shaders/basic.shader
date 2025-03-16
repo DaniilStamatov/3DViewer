@@ -29,18 +29,25 @@ in vec2 TexCoords;
 uniform vec3 u_color;
 uniform vec3 u_lightColor;
 uniform vec3 u_lightPosition;
+uniform vec3 u_viewPosition;
 uniform sampler2D u_texDiffuse;
 void main()
 {
+    //ambient
     float ambientStrength = 0.1;
     vec3 ambient = ambientStrength * u_lightColor;
-
+    //diffuse
     vec3 norm = normalize(Normal);
     vec3 lightDir = normalize(u_lightPosition - FragPos);
     float diff = max(dot(norm, lightDir), 0.0);
     vec3 diffuse =  diff * u_lightColor;
-
-    vec3 result = (ambient + diffuse) * u_color;
+    //speclar
+    float specularStrength = 0.5;
+    vec3 viewDir = normalize(u_viewPosition - FragPos);
+    vec3 reflectDir = reflect(-lightDir, norm);  
+    float spec = pow(max(dot(viewDir, reflectDir), 0.0), 32);
+    vec3 specular = specularStrength * spec * u_lightColor; 
+    vec3 result = (ambient + diffuse + specular) * u_color;
 
     color = vec4(result, 1.0);
 };
