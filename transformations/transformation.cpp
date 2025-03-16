@@ -50,28 +50,36 @@ s21::Matrix4x4 s21::LookAt(const Vector3 &eye, const Vector3 &center, const Vect
     const Vector3 u(s.cross(f));               // vector UP of camera
 
     s21::Matrix4x4 result;
-     result[0][0] = s.x; result[1][0] = s.y; result[2][0] = s.z; result[3][0] = 0.0f;
-    result[0][1] = u.x; result[1][1] = u.y; result[2][1] = u.z; result[3][1] = 0.0f;
-    result[0][2] = -f.x; result[1][2] = -f.y; result[2][2] = -f.z; result[3][2] = 0.0f;
-    
-    // Устанавливаем позицию камеры
+    result[0][0] = s.x;
+    result[1][0] = s.y;
+    result[2][0] = s.z;
+    result[3][0] = 0.0f;
+    result[0][1] = u.x;
+    result[1][1] = u.y;
+    result[2][1] = u.z;
+    result[3][1] = 0.0f;
+    result[0][2] = -f.x;
+    result[1][2] = -f.y;
+    result[2][2] = -f.z;
+    result[3][2] = 0.0f;
+
     result[3][0] = -s.dot(eye);
     result[3][1] = -u.dot(eye);
-    result[3][2] = f.dot(eye); // Обратите внимание на знак здесь
-    result[3][3] = 1.0f; // Однородные координаты
+    result[3][2] = f.dot(eye);
+    result[3][3] = 1.0f;
     return result;
 }
 
 s21::Matrix4x4 s21::perspective(float fov, float aspect, float far, float near) {
-    float tanHalfFov = tan(fov / 2.0f);
+    float const tanHalfFov = tan(fov / 2.0f);
 
-    Matrix4x4 result;
+    Matrix4x4 result(0.0f);
 
-    result[0][0] = 1.0f / (aspect * tanHalfFov);
-    result[1][1] = 1.0f / tanHalfFov;
-    result[2][2] = -(far + near) / (far - near);
-    result[2][3] = -1.0f;
-    result[3][2] = -(2.0f * far * near) / (far - near);
+    result[0].x = 1.0f / (aspect * tanHalfFov);
+    result[1].y = 1.0f / tanHalfFov;
+    result[2].z = -(far + near) / (far - near);
+    result[2].w = -1.0f;
+    result[3].z = -(2.0f * far * near) / (far - near);
 
     return result;
 }

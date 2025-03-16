@@ -6,55 +6,16 @@ ModelRenderer::ModelRenderer(QOpenGLExtraFunctions *functions, const s21::Loader
     m_linesColor = s21::Vector3(1.0, 0.5, 0.3);
     m_loader = loader;
     m_functions = functions;
-    functions->glGenVertexArrays(1, &m_vao);
-    functions->glGenBuffers(1, &m_vbo);
-    functions->glGenBuffers(1, &m_eboLines);
-    functions->glGenBuffers(1, &m_normalEBO);
-    functions->glGenBuffers(1, &m_normalVBO);
-    functions->glGenBuffers(1, &m_eboTriangles);
     SetUp();
 }
 
 ModelRenderer::~ModelRenderer() {}
 
 void ModelRenderer::SetUp() {
-    m_loader.PrintLoadedInfo();
-    m_functions->glBindVertexArray(m_vao);
-    m_functions->glBindBuffer(GL_ARRAY_BUFFER, m_vbo);
-    m_functions->glBufferData(GL_ARRAY_BUFFER, m_loader.GetVerticies().size() * sizeof(s21::Vertex),
-                              m_loader.GetVerticies().data(), GL_STATIC_DRAW);
-
-    std::vector<unsigned int> indices;
-    indices.reserve(m_loader.GetFaces().size());
-    const std::vector<unsigned int> &lindices = m_loader.GetIndices();
-    for (const auto& index : lindices) {
-        indices.emplace_back(index);
-        
+    m_meshes.reserve(m_loader.GetMeshes().size());
+    for (auto mesh : m_loader.GetMeshes()) {
+        m_meshes.emplace_back(m_functions, mesh.m_vertices, mesh.m_indices, mesh.m_material);
     }
-
-    m_functions->glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_eboTriangles);
-    m_functions->glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned int), indices.data(),
-                              GL_STATIC_DRAW);
-
-    std::vector<unsigned int> lineIndices;
-    for (size_t i = 0; i < indices.size(); i += 3) {
-        lineIndices.push_back(indices[i]);
-        lineIndices.push_back(indices[i + 1]);
-        lineIndices.push_back(indices[i + 1]);
-        lineIndices.push_back(indices[i + 2]);
-        lineIndices.push_back(indices[i + 2]);
-        lineIndices.push_back(indices[i]);
-    }
- 
-    m_functions->glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_eboLines);
-    m_functions->glBufferData(GL_ELEMENT_ARRAY_BUFFER, lineIndices.size() * sizeof(unsigned int), lineIndices.data(),
-                              GL_STATIC_DRAW);
-
-    m_functions->glEnableVertexAttribArray(0);
-    m_functions->glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(s21::Vertex), (void *)0);
-    m_functions->glEnableVertexAttribArray(1);
-    m_functions->glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(s21::Vertex), (void *)offsetof(s21::Vertex, normal));
-    m_functions->glBindVertexArray(0);
 }
 
 void ModelRenderer::SetObjectPosition(float x, float y, float z) {
@@ -73,31 +34,28 @@ void ModelRenderer::SetObjectScale(float x, float y, float z) {
 }
 
 void ModelRenderer::SetLinesColor(float x, float y, float z) {
-    m_linesColor = s21::Vector3(
-        std::clamp(x / 255.0f, 0.0f, 1.0f),
-        std::clamp(y / 255.0f, 0.0f, 1.0f),
-        std::clamp(z / 255.0f, 0.0f, 1.0f)
-    );
+    m_linesColor = s21::Vector3(std::clamp(x / 255.0f, 0.0f, 1.0f), std::clamp(y / 255.0f, 0.0f, 1.0f),
+                                std::clamp(z / 255.0f, 0.0f, 1.0f));
 }
 
-// s21::Vector3 ModelRenderer::GetPosition() const { return s21::Vector3(m_positionMatrix[3][0], m_positionMatrix[3][1], m_positionMatrix[3][2]); }
+// s21::Vector3 ModelRenderer::GetPosition() const { return s21::Vector3(m_positionMatrix[3][0], m_positionMatrix[3][1],
+// m_positionMatrix[3][2]); }
 
-// s21::Vector3 ModelRenderer::GetRotation() const { 
-  
+// s21::Vector3 ModelRenderer::GetRotation() const {
+
 // }
 
-// s21::Vector3 ModelRenderer::GetScale() const { return s21::Vector3(m_scaleMatrix[3][0], m_scaleMatrix[3][1], m_scaleMatrix[3][2]); }
+// s21::Vector3 ModelRenderer::GetScale() const { return s21::Vector3(m_scaleMatrix[3][0], m_scaleMatrix[3][1],
+// m_scaleMatrix[3][2]); }
 
-void ModelRenderer::ParseTransform(s21::Vector3& position, s21::Vector3 &scale, s21::Vector3 &rotation) {
-  
-  s21::Matrix4x4 localMat(m_transform);
-  position = s21::Vector3(localMat[3][0], localMat[3][1], localMat[3][2]);
+void ModelRenderer::ParseTransform(s21::Vector3 &position, s21::Vector3 &scale, s21::Vector3 &rotation) {
+    s21::Matrix4x4 localMat(m_transform);
+    position = s21::Vector3(localMat[3][0], localMat[3][1], localMat[3][2]);
 
     localMat[3] = {0, 0, 0, localMat[3].w};
     s21::Vector3 Row[3];
-  		for (int i = 0; i < 3; ++i)
-  			for (int j = 0; j < 3; ++j)
-  				Row[i][j] = localMat[i][j];
+    for (int i = 0; i < 3; ++i)
+        for (int j = 0; j < 3; ++j) Row[i][j] = localMat[i][j];
 
     scale.x = Row[0].length();
     Row[0] = s21::scale(Row[0], 1);
@@ -106,43 +64,36 @@ void ModelRenderer::ParseTransform(s21::Vector3& position, s21::Vector3 &scale, 
     scale.y = Row[2].length();
     Row[2] = s21::scale(Row[2], 1);
     rotation.y = asin(-Row[0][2]);
-	if (cos(rotation.y) != 0) {
-		rotation.x = atan2(Row[1][2], Row[2][2]);
-		rotation.z = atan2(Row[0][1], Row[0][0]);
-	}
-	else {
-		rotation.x = atan2(-Row[2][0], Row[1][1]);
-		rotation.z = 0;
-	}
+    if (cos(rotation.y) != 0) {
+        rotation.x = atan2(Row[1][2], Row[2][2]);
+        rotation.z = atan2(Row[0][1], Row[0][0]);
+    } else {
+        rotation.x = atan2(-Row[2][0], Row[1][1]);
+        rotation.z = 0;
+    }
 }
 
 void ModelRenderer::SwitchDrawMode() {
     m_drawMode = m_drawMode == DrawMode::LINES ? DrawMode::TRIANGLES : DrawMode::LINES;
 }
 
-void ModelRenderer::Draw(const glm::mat4 &projection, const s21::Matrix4x4 &view) {
-    m_functions-> glEnable(GL_DEPTH_TEST);
+void ModelRenderer::Draw(const glm::mat4 &projection, const s21::Matrix4x4 &view, const s21::Vector3 &cameraPos) {
+    m_functions->glEnable(GL_DEPTH_TEST);
 
-    m_functions->glBindVertexArray(m_vao);
     m_shader.Bind();
     m_shader.SetUniformMat4f("u_projection", projection);
     m_shader.SetUniformMat4f("u_view", view);
+    m_shader.SetUniform3f("u_viewPosition", cameraPos);
     m_shader.SetUniform3f("u_color", m_linesColor);
     m_shader.SetUniform3f("u_lightPosition", s21::Vector3(2.0, 2.0, 2.0));
-    m_shader.SetUniform3f("u_lightColor", s21::Vector3(1.0, 0.0, 0.0));
+    m_shader.SetUniform3f("u_lightColor", s21::Vector3(1.0, 1.0, 1.0));
     m_transform = m_positionMatrix * m_rotationMatrix * m_scaleMatrix;
     m_texture.Bind();
     m_shader.SetUniform1i("u_texDiffuse", 0);
     m_shader.SetUniformMat4f("u_model", m_transform);
-
-    if (m_drawMode == DrawMode::LINES) {
-        m_functions->glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_eboLines);
-        m_functions->glDrawElements(GL_LINES, m_loader.GetIndices().size() * 3, GL_UNSIGNED_INT, 0);
-    } else if (m_drawMode == DrawMode::TRIANGLES) {
-        m_functions->glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_eboTriangles);
-        m_functions->glDrawElements(GL_TRIANGLES, m_loader.GetIndices().size(), GL_UNSIGNED_INT, 0);
+    for (auto mesh : m_meshes) {
+        mesh.Draw(m_drawMode, m_shader);
     }
-
     GLenum err;
     while ((err = m_functions->glGetError()) != GL_NO_ERROR) {
         std::cerr << "OpenGL error: " << err << std::endl;

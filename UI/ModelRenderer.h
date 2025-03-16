@@ -7,7 +7,7 @@
 #include "../Loader.h"
 #include "../shader/shader.h"
 #include "../OpenGl/Texture.h"
-enum class DrawMode { TRIANGLES, LINES };
+#include "MeshRenderer.h"
 
 class ModelRenderer : QOpenGLExtraFunctions {
    public:
@@ -26,8 +26,8 @@ class ModelRenderer : QOpenGLExtraFunctions {
     s21::Vector3 GetScale() const;
     void ParseTransform(s21::Vector3& position, s21::Vector3& scale, s21::Vector3& rotation);
     void SwitchDrawMode();
-    void Draw(const glm::mat4& projection, const s21::Matrix4x4& view);
-
+    void Draw(const glm::mat4& projection, const s21::Matrix4x4& view, const s21::Vector3& cameraPos);
+    void ProcessMesh(s21::Mesh* mesh);
    private:
     QOpenGLExtraFunctions* m_functions;
     s21::Loader m_loader;
@@ -36,14 +36,10 @@ class ModelRenderer : QOpenGLExtraFunctions {
     s21::Matrix4x4 m_scaleMatrix;
     s21::Matrix4x4 m_transform;
     s21::Vector3 m_linesColor;
+    std::vector<MeshRenderer> m_meshes;
     Texture m_texture;
     Shader m_shader;
 
     DrawMode m_drawMode = DrawMode::TRIANGLES;
-    unsigned int m_vao;
-    unsigned int m_vbo;
-    unsigned int m_normalVBO;
-    unsigned int m_normalEBO;
-    unsigned int m_eboLines;
-    unsigned int m_eboTriangles;
+    
 };

@@ -22,9 +22,15 @@ void OpenGLWindow::loadModel(const std::string &filename) {
     m_models.emplace_back(functions, m_loader);
 }
 
-void OpenGLWindow::SetCurrentObjectPosition(float x, float y, float z) { m_modelController.get()->SetObjectPosition(x, y, z); }
-void OpenGLWindow::SetCurrentObjectRotation(float x, float y, float z) { m_modelController.get()->SetObjectRotation(x, y, z); }
-void OpenGLWindow::SetCurrentObjectScale(float x, float y, float z) { m_modelController.get()->SetObjectScale(x, y, z); }
+void OpenGLWindow::SetCurrentObjectPosition(float x, float y, float z) {
+    m_modelController.get()->SetObjectPosition(x, y, z);
+}
+void OpenGLWindow::SetCurrentObjectRotation(float x, float y, float z) {
+    m_modelController.get()->SetObjectRotation(x, y, z);
+}
+void OpenGLWindow::SetCurrentObjectScale(float x, float y, float z) {
+    m_modelController.get()->SetObjectScale(x, y, z);
+}
 
 // s21::Vector3 OpenGLWindow::GetCurrentPosition() const {
 //    return m_modelController.get()->GetCurrentPosition();
@@ -50,51 +56,30 @@ void OpenGLWindow::initializeGL() {
     this->makeCurrent();
     functions->glClearColor(0.3f, 0.4f, 0.5f, 1.0f);
     lightShader = new Shader(functions, "shaders/light.shader");
-   
-     
-    float vertices[] = {
-        -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-         0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-         0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-         0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-        -0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-        -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
 
-        -0.5f, -0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
-         0.5f, -0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
-         0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
-         0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
-        -0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
-        -0.5f, -0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
+    float vertices[] = {-0.5f, -0.5f, -0.5f, 0.0f,  0.0f,  -1.0f, 0.5f,  -0.5f, -0.5f, 0.0f,  0.0f,  -1.0f,
+                        0.5f,  0.5f,  -0.5f, 0.0f,  0.0f,  -1.0f, 0.5f,  0.5f,  -0.5f, 0.0f,  0.0f,  -1.0f,
+                        -0.5f, 0.5f,  -0.5f, 0.0f,  0.0f,  -1.0f, -0.5f, -0.5f, -0.5f, 0.0f,  0.0f,  -1.0f,
 
-        -0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
-        -0.5f,  0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
-        -0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
-        -0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
-        -0.5f, -0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
-        -0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
+                        -0.5f, -0.5f, 0.5f,  0.0f,  0.0f,  1.0f,  0.5f,  -0.5f, 0.5f,  0.0f,  0.0f,  1.0f,
+                        0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,  0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
+                        -0.5f, 0.5f,  0.5f,  0.0f,  0.0f,  1.0f,  -0.5f, -0.5f, 0.5f,  0.0f,  0.0f,  1.0f,
 
-         0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
-         0.5f,  0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
-         0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
-         0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
-         0.5f, -0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
-         0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
+                        -0.5f, 0.5f,  0.5f,  -1.0f, 0.0f,  0.0f,  -0.5f, 0.5f,  -0.5f, -1.0f, 0.0f,  0.0f,
+                        -0.5f, -0.5f, -0.5f, -1.0f, 0.0f,  0.0f,  -0.5f, -0.5f, -0.5f, -1.0f, 0.0f,  0.0f,
+                        -0.5f, -0.5f, 0.5f,  -1.0f, 0.0f,  0.0f,  -0.5f, 0.5f,  0.5f,  -1.0f, 0.0f,  0.0f,
 
-        -0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
-         0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
-         0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
-         0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
-        -0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
-        -0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
+                        0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,  0.5f,  0.5f,  -0.5f, 1.0f,  0.0f,  0.0f,
+                        0.5f,  -0.5f, -0.5f, 1.0f,  0.0f,  0.0f,  0.5f,  -0.5f, -0.5f, 1.0f,  0.0f,  0.0f,
+                        0.5f,  -0.5f, 0.5f,  1.0f,  0.0f,  0.0f,  0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
 
-        -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,
-         0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,
-         0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
-         0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
-        -0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
-        -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f
-    };
+                        -0.5f, -0.5f, -0.5f, 0.0f,  -1.0f, 0.0f,  0.5f,  -0.5f, -0.5f, 0.0f,  -1.0f, 0.0f,
+                        0.5f,  -0.5f, 0.5f,  0.0f,  -1.0f, 0.0f,  0.5f,  -0.5f, 0.5f,  0.0f,  -1.0f, 0.0f,
+                        -0.5f, -0.5f, 0.5f,  0.0f,  -1.0f, 0.0f,  -0.5f, -0.5f, -0.5f, 0.0f,  -1.0f, 0.0f,
+
+                        -0.5f, 0.5f,  -0.5f, 0.0f,  1.0f,  0.0f,  0.5f,  0.5f,  -0.5f, 0.0f,  1.0f,  0.0f,
+                        0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,  0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
+                        -0.5f, 0.5f,  0.5f,  0.0f,  1.0f,  0.0f,  -0.5f, 0.5f,  -0.5f, 0.0f,  1.0f,  0.0f};
 
     functions->glGenVertexArrays(1, &lightCubeVAO);
     functions->glBindVertexArray(lightCubeVAO);
@@ -102,7 +87,7 @@ void OpenGLWindow::initializeGL() {
     functions->glBindBuffer(GL_ARRAY_BUFFER, VBO);
     functions->glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
-    functions->glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+    functions->glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void *)0);
     functions->glEnableVertexAttribArray(0);
 }
 
@@ -111,7 +96,7 @@ void OpenGLWindow::resizeGL(int w, int h) { glViewport(0, 0, w, h); }
 void OpenGLWindow::paintGL() {
     makeCurrent();
     glEnable(GL_DEPTH_TEST);
-    glDepthMask(GL_TRUE); 
+    glDepthMask(GL_TRUE);
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -125,22 +110,22 @@ void OpenGLWindow::paintGL() {
     s21::Matrix4x4 view = m_camera.GetViewMatrix();
     functions->glLineWidth(1.0f);
     for (size_t i = 0; i < m_models.size(); i++) {
-        m_models[i].Draw(projection, view);
+        m_models[i].Draw(projection, view, m_camera.GetPosition());
     }
     s21::Matrix4x4 model;
-     lightShader->Bind();
+    lightShader->Bind();
     lightShader->SetUniformMat4f("u_projection", projection);
     lightShader->SetUniformMat4f("u_view", view);
     lightShader->SetUniform3f("u_color", {1.0, 0.0, 0.0});
     s21::Matrix4x4 trans = s21::Translate(s21::Matrix4x4(), {2.0f, 2.0f, 2.0f});
     s21::Matrix4x4 scale = s21::Scale(s21::Matrix4x4(), {0.2, 0.2, 0.2});
-    model = scale * trans ;
+    model = scale * trans;
     lightShader->SetUniformMat4f("u_model", model);
 
     functions->glBindVertexArray(lightCubeVAO);
     functions->glDrawArrays(GL_TRIANGLES, 0, 36);
     lightShader->Unbind();
-  
+
     functions->glBindVertexArray(0);
 }
 
@@ -164,8 +149,7 @@ void OpenGLWindow::keyPressEvent(QKeyEvent *event) {
     }
 }
 
-
- void OpenGLWindow::mousePressEvent(QMouseEvent *event) {
+void OpenGLWindow::mousePressEvent(QMouseEvent *event) {
     if (event->button() == Qt::LeftButton) {
         lastMousePos = event->pos();
         isDragging = true;
@@ -173,7 +157,7 @@ void OpenGLWindow::keyPressEvent(QKeyEvent *event) {
 }
 
 void OpenGLWindow::mouseMoveEvent(QMouseEvent *event) {
-   if (isDragging) {
+    if (isDragging) {
         float xpos = static_cast<float>(event->x());
         float ypos = static_cast<float>(event->y());
 
@@ -201,24 +185,24 @@ void OpenGLWindow::mouseReleaseEvent(QMouseEvent *event) {
 }
 
 //   // устанавливаем ширину линии приближенно в пикселях
-//    glLineWidth(3.0f); 
+//    glLineWidth(3.0f);
 //    // до вызова команды ширина равна 1 пикселю по умолчанию
-   
+
 //    // устанавливаем цвет последующих примитивов
-//    glColor4f(1.00f, 0.00f, 0.00f, 1.0f); 
+//    glColor4f(1.00f, 0.00f, 0.00f, 1.0f);
 //    // ось x красного цвета
 //    glBegin(GL_LINES); // построение линии
 //       glVertex3f( 1.0f,  0.0f,  0.0f); // первая точка
 //       glVertex3f(-1.0f,  0.0f,  0.0f); // вторая точка
-//    glEnd();  
-   
+//    glEnd();
+
 //    QColor halfGreen(0, 128, 0, 255);
 //    glColor3f(0, 0.5, 0);
 //    glBegin(GL_LINES);
 //       // ось y зеленого цвета
 //       glVertex3f( 0.0f,  1.0f,  0.0f);
 //       glVertex3f( 0.0f, -1.0f,  0.0f);
-  
+
 //       glColor4f(0.00f, 0.00f, 1.00f, 1.0f);
 //       // ось z синего цвета
 //       glVertex3f( 0.0f,  0.0f,  1.0f);

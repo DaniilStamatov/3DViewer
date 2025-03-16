@@ -46,6 +46,7 @@ class Shader {
     void SetUniformMat4f(const std::string &name, const glm::mat4 &mat);
     void SetUniform3f(const std::string &name, const s21::Vector3 &vector);
     void SetUniform1i(const std::string &name, int num);
+    void SetUniform1f(const std::string &name, float num);
 
     uint GetRendererID() const;
     ~Shader();

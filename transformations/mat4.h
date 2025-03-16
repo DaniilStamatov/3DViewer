@@ -43,7 +43,9 @@ struct Vector3 {
                 throw std::out_of_range("Index out of range");
         }
     }
-
+void print() const {
+        std::cout << "Vector3(" << x << ", " << y << ", " << z << ")";
+    }
     float x, y, z;
    
 };
@@ -142,6 +144,12 @@ class Matrix4x4 {
         mat[1] = Vector4(0, 1, 0, 0);
         mat[2] = Vector4(0, 0, 1, 0);
         mat[3] = Vector4(0, 0, 0, 1);
+    }
+    Matrix4x4(float val) {
+        mat[0] = Vector4(val, 0, 0, 0);
+        mat[1] = Vector4(0, val, 0, 0);
+        mat[2] = Vector4(0, 0, val, 0);
+        mat[3] = Vector4(0, 0, 0, val);
     }
 
     Vector4 &operator[](int row) { return mat[row]; }

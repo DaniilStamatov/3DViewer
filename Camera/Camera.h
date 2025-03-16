@@ -70,7 +70,7 @@ class Camera {
     }
 
     float GetZoom() const { return m_zoom; }
-
+    s21::Vector3 GetPosition() const {return m_position;}
    private:
     s21::Vector3 m_position;
     s21::Vector3 m_front;

@@ -2,10 +2,7 @@
 #include <QElapsedTimer>
 #include <QKeyEvent>
 #include <QMouseEvent>
-#include <QOpenGLBuffer>
 #include <QOpenGLExtraFunctions>
-#include <QOpenGLShaderProgram>
-#include <QOpenGLVertexArrayObject>
 #include <QOpenGLWidget>
 #include <QTimer>
 #include <QVBoxLayout>

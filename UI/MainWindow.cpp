@@ -249,19 +249,19 @@ void MainWindow::onZRotUpButtonClicked() { updateRotation(zRotationInput, 1); }
 
 void MainWindow::onZRotDownButtonClicked() { updateRotation(zRotationInput, -1); }
 void MainWindow::onChangeCurrentModel() {
-  s21::Vector3 pos, rot, scale;
-  m_glWidget->ParseTransform(pos, scale, rot);    
-  xCoordInput->setText(QString::number(pos.x, 'f', 2));
-  yCoordInput->setText(QString::number(pos.y, 'f', 2));
-  zCoordInput->setText(QString::number(pos.z, 'f', 2));
+    s21::Vector3 pos, rot, scale;
+    m_glWidget->ParseTransform(pos, scale, rot);
+    xCoordInput->setText(QString::number(pos.x, 'f', 2));
+    yCoordInput->setText(QString::number(pos.y, 'f', 2));
+    zCoordInput->setText(QString::number(pos.z, 'f', 2));
 
-  xRotationInput->setText(QString::number(rot.x, 'f', 2));
-  yRotationInput->setText(QString::number(rot.y, 'f', 2));
-  zRotationInput->setText(QString::number(rot.z, 'f', 2));
+    xRotationInput->setText(QString::number(rot.x, 'f', 2));
+    yRotationInput->setText(QString::number(rot.y, 'f', 2));
+    zRotationInput->setText(QString::number(rot.z, 'f', 2));
 
-  xScaleInput->setText(QString::number(scale.x, 'f', 2));
-  yScaleInput->setText(QString::number(scale.y, 'f', 2));
-  zScaleInput->setText(QString::number(scale.z, 'f', 2));
+    xScaleInput->setText(QString::number(scale.x, 'f', 2));
+    yScaleInput->setText(QString::number(scale.y, 'f', 2));
+    zScaleInput->setText(QString::number(scale.z, 'f', 2));
 }
 
 void MainWindow::updateCoordinate(QLineEdit *coordInput, int delta) {
