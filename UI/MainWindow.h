@@ -1,4 +1,7 @@
 #pragma once
+#include "ArrowButton.h"
+#include "OpenGLWindow.h"
+
 #include <QColorDialog>
 #include <QFileDialog>
 #include <QLabel>
@@ -6,8 +9,6 @@
 #include <QMainWindow>
 #include <QPushButton>
 
-#include "ArrowButton.h"
-#include "OpenGLWindow.h"
 class MainWindow : public QMainWindow {
    public:
     MainWindow(QWidget *parent = nullptr);

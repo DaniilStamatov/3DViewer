@@ -1,13 +1,7 @@
 #pragma once
-#include <QOpenGLExtraFunctions>
-#include <QOpenGLWidget>
-#include "../vendor/glm/glm.hpp"
-#include "../vendor/glm/gtc/matrix_transform.hpp"
-#include "../vendor/glm/gtc/type_ptr.hpp"
-#include "../Loader.h"
-#include "../shader/shader.h"
-#include "../OpenGl/Texture.h"
 #include "MeshRenderer.h"
+
+#include <QOpenGLWidget>
 
 class ModelRenderer : QOpenGLExtraFunctions {
    public:

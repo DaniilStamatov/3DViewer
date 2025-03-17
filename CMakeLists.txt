@@ -13,22 +13,39 @@ find_package(OpenGL REQUIRED)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pg")
 
+file(GLOB UI_SOURCES
+    UI/*.cpp
+)
+
+file(GLOB OPENGL_SOURCES
+    OpenGl/*.cpp
+)
 set(PROJECT_SOURCES
-    UI/OpenGLWindow.cpp
-    UI/MainWindow.cpp
+    ${UI_SOURCES}
+    ${OPENGL_SOURCES}
     UI/ArrowButton.h
-    UI/ModelRenderer.cpp
-    Controller/ModelController.cpp
     main.cpp
-    Loader.cpp
+    ModelLoader/Loader.cpp
     transformations/transformation.cpp
-    shader/shader.cpp
-    OpenGl/Texture.cpp
+    Controller/ModelController.cpp
     vendor/stb_image.cpp
 )
 
+
 # Создание исполняемого файла
 add_executable(3DViewer ${PROJECT_SOURCES})
+
+target_include_directories(3DViewer PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/UI
+    ${CMAKE_CURRENT_SOURCE_DIR}/transformations
+    ${CMAKE_CURRENT_SOURCE_DIR}/OpenGl
+    ${CMAKE_CURRENT_SOURCE_DIR}/Camera
+    ${CMAKE_CURRENT_SOURCE_DIR}/Controller
+    ${CMAKE_CURRENT_SOURCE_DIR}/shader
+    ${CMAKE_CURRENT_SOURCE_DIR}/vendor/glm
+    ${CMAKE_CURRENT_SOURCE_DIR}/vendor
+    ${CMAKE_CURRENT_SOURCE_DIR}/ModelLoader
+)
 
 target_link_libraries(3DViewer PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 target_link_libraries(3DViewer PRIVATE Qt${QT_VERSION_MAJOR}::OpenGLWidgets)

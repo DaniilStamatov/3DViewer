@@ -461,15 +461,21 @@
 			null
 		],
 		[
-			"/home/daniil/Documents/3DViewer/src/Loader.h",
+			"/home/daniil/Documents/3DViewer/src/ModelLoader/Loader.h",
 			"Mu",
-			"EWIEGA46WW/moc_Loader.cpp",
+			"PG56F4UXMI/moc_Loader.cpp",
 			null
 		],
 		[
 			"/home/daniil/Documents/3DViewer/src/OpenGl/Texture.h",
 			"Mu",
 			"HZSXOWOKNM/moc_Texture.cpp",
+			null
+		],
+		[
+			"/home/daniil/Documents/3DViewer/src/OpenGl/shader.h",
+			"Mu",
+			"HZSXOWOKNM/moc_shader.cpp",
 			null
 		],
 		[
@@ -494,12 +500,6 @@
 			"/home/daniil/Documents/3DViewer/src/UI/OpenGLWindow.h",
 			"Mu",
 			"KRKR4BN5RM/moc_OpenGLWindow.cpp",
-			null
-		],
-		[
-			"/home/daniil/Documents/3DViewer/src/shader/shader.h",
-			"Mu",
-			"Y3UQALW6IS/moc_shader.cpp",
 			null
 		],
 		[
@@ -536,6 +536,15 @@
 	],
 	"MOC_INCLUDES" : 
 	[
+		"/home/daniil/Documents/3DViewer/src/UI",
+		"/home/daniil/Documents/3DViewer/src/transformations",
+		"/home/daniil/Documents/3DViewer/src/OpenGl",
+		"/home/daniil/Documents/3DViewer/src/Camera",
+		"/home/daniil/Documents/3DViewer/src/Controller",
+		"/home/daniil/Documents/3DViewer/src/shader",
+		"/home/daniil/Documents/3DViewer/src/vendor/glm",
+		"/home/daniil/Documents/3DViewer/src/vendor",
+		"/home/daniil/Documents/3DViewer/src/ModelLoader",
 		"/usr/include/qt6/QtWidgets",
 		"/usr/include/qt6",
 		"/usr/include/qt6/QtCore",
@@ -589,8 +598,13 @@
 			"Mu",
 			null
 		],
-		[ "/home/daniil/Documents/3DViewer/src/Loader.cpp", "Mu", null ],
+		[
+			"/home/daniil/Documents/3DViewer/src/ModelLoader/Loader.cpp",
+			"Mu",
+			null
+		],
 		[ "/home/daniil/Documents/3DViewer/src/OpenGl/Texture.cpp", "Mu", null ],
+		[ "/home/daniil/Documents/3DViewer/src/OpenGl/shader.cpp", "Mu", null ],
 		[ "/home/daniil/Documents/3DViewer/src/UI/MainWindow.cpp", "Mu", null ],
 		[
 			"/home/daniil/Documents/3DViewer/src/UI/ModelRenderer.cpp",
@@ -599,7 +613,6 @@
 		],
 		[ "/home/daniil/Documents/3DViewer/src/UI/OpenGLWindow.cpp", "Mu", null ],
 		[ "/home/daniil/Documents/3DViewer/src/main.cpp", "Mu", null ],
-		[ "/home/daniil/Documents/3DViewer/src/shader/shader.cpp", "Mu", null ],
 		[
 			"/home/daniil/Documents/3DViewer/src/transformations/transformation.cpp",
 			"Mu",

@@ -1,5 +1,7 @@
 #pragma once
-#include "ModelRenderer.h"
+#include "Loader.h"
+#include "shader.h"
+#include "Texture.h"
 enum class DrawMode { TRIANGLES, LINES };
 
 class MeshRenderer{ 

@@ -203,29 +203,29 @@ Controller/ModelController.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/Controller/ModelController.cpp.s
 .PHONY : Controller/ModelController.cpp.s
 
-Loader.o: Loader.cpp.o
-.PHONY : Loader.o
+ModelLoader/Loader.o: ModelLoader/Loader.cpp.o
+.PHONY : ModelLoader/Loader.o
 
 # target to build an object file
-Loader.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/Loader.cpp.o
-.PHONY : Loader.cpp.o
+ModelLoader/Loader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/ModelLoader/Loader.cpp.o
+.PHONY : ModelLoader/Loader.cpp.o
 
-Loader.i: Loader.cpp.i
-.PHONY : Loader.i
+ModelLoader/Loader.i: ModelLoader/Loader.cpp.i
+.PHONY : ModelLoader/Loader.i
 
 # target to preprocess a source file
-Loader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/Loader.cpp.i
-.PHONY : Loader.cpp.i
+ModelLoader/Loader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/ModelLoader/Loader.cpp.i
+.PHONY : ModelLoader/Loader.cpp.i
 
-Loader.s: Loader.cpp.s
-.PHONY : Loader.s
+ModelLoader/Loader.s: ModelLoader/Loader.cpp.s
+.PHONY : ModelLoader/Loader.s
 
 # target to generate assembly for a file
-Loader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/Loader.cpp.s
-.PHONY : Loader.cpp.s
+ModelLoader/Loader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/ModelLoader/Loader.cpp.s
+.PHONY : ModelLoader/Loader.cpp.s
 
 OpenGl/Texture.o: OpenGl/Texture.cpp.o
 .PHONY : OpenGl/Texture.o
@@ -250,6 +250,30 @@ OpenGl/Texture.s: OpenGl/Texture.cpp.s
 OpenGl/Texture.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/OpenGl/Texture.cpp.s
 .PHONY : OpenGl/Texture.cpp.s
+
+OpenGl/shader.o: OpenGl/shader.cpp.o
+.PHONY : OpenGl/shader.o
+
+# target to build an object file
+OpenGl/shader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/OpenGl/shader.cpp.o
+.PHONY : OpenGl/shader.cpp.o
+
+OpenGl/shader.i: OpenGl/shader.cpp.i
+.PHONY : OpenGl/shader.i
+
+# target to preprocess a source file
+OpenGl/shader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/OpenGl/shader.cpp.i
+.PHONY : OpenGl/shader.cpp.i
+
+OpenGl/shader.s: OpenGl/shader.cpp.s
+.PHONY : OpenGl/shader.s
+
+# target to generate assembly for a file
+OpenGl/shader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/OpenGl/shader.cpp.s
+.PHONY : OpenGl/shader.cpp.s
 
 UI/MainWindow.o: UI/MainWindow.cpp.o
 .PHONY : UI/MainWindow.o
@@ -347,30 +371,6 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-shader/shader.o: shader/shader.cpp.o
-.PHONY : shader/shader.o
-
-# target to build an object file
-shader/shader.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/shader/shader.cpp.o
-.PHONY : shader/shader.cpp.o
-
-shader/shader.i: shader/shader.cpp.i
-.PHONY : shader/shader.i
-
-# target to preprocess a source file
-shader/shader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/shader/shader.cpp.i
-.PHONY : shader/shader.cpp.i
-
-shader/shader.s: shader/shader.cpp.s
-.PHONY : shader/shader.s
-
-# target to generate assembly for a file
-shader/shader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/3DViewer.dir/build.make CMakeFiles/3DViewer.dir/shader/shader.cpp.s
-.PHONY : shader/shader.cpp.s
-
 transformations/transformation.o: transformations/transformation.cpp.o
 .PHONY : transformations/transformation.o
 
@@ -436,12 +436,15 @@ help:
 	@echo "... Controller/ModelController.o"
 	@echo "... Controller/ModelController.i"
 	@echo "... Controller/ModelController.s"
-	@echo "... Loader.o"
-	@echo "... Loader.i"
-	@echo "... Loader.s"
+	@echo "... ModelLoader/Loader.o"
+	@echo "... ModelLoader/Loader.i"
+	@echo "... ModelLoader/Loader.s"
 	@echo "... OpenGl/Texture.o"
 	@echo "... OpenGl/Texture.i"
 	@echo "... OpenGl/Texture.s"
+	@echo "... OpenGl/shader.o"
+	@echo "... OpenGl/shader.i"
+	@echo "... OpenGl/shader.s"
 	@echo "... UI/MainWindow.o"
 	@echo "... UI/MainWindow.i"
 	@echo "... UI/MainWindow.s"
@@ -454,9 +457,6 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... shader/shader.o"
-	@echo "... shader/shader.i"
-	@echo "... shader/shader.s"
 	@echo "... transformations/transformation.o"
 	@echo "... transformations/transformation.i"
 	@echo "... transformations/transformation.s"

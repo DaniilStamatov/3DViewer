@@ -1,23 +1,16 @@
 #pragma once
+
+#include "Camera.h"
+#include "ModelController.h"
+#include "ModelRenderer.h"
+
 #include <QElapsedTimer>
 #include <QKeyEvent>
 #include <QMouseEvent>
-#include <QOpenGLExtraFunctions>
-#include <QOpenGLWidget>
 #include <QTimer>
 #include <QVBoxLayout>
 #include <QWidget>
 #include <chrono>
-
-#include "../Camera/Camera.h"
-#include "../Controller/ModelController.h"
-#include "../Loader.h"
-#include "../shader/shader.h"
-#include "../transformations/transformation.h"
-#include "../vendor/glm/glm.hpp"
-#include "../vendor/glm/gtc/matrix_transform.hpp"
-#include "../vendor/glm/gtc/type_ptr.hpp"
-#include "ModelRenderer.h"
 
 class OpenGLWindow : public QOpenGLWidget {
     Q_OBJECT

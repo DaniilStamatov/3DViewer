@@ -1,10 +1,12 @@
+#pragma once
+#include "OpenGLWindow.h"
+
 #include <QIcon>
 #include <QMouseEvent>
 #include <QPixmap>
 #include <QPushButton>
 #include <QTimer>
 #include <QTransform>
-#include "OpenGLWindow.h"
 
 class ArrowButton : public QPushButton {
     Q_OBJECT

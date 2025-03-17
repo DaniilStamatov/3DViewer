@@ -2,7 +2,7 @@
 #include <string>
 #include <QOpenGLExtraFunctions>
 #include <iostream>
-#include "../vendor/stb_image.h"    
+#include "stb_image.h"    
 class Texture {
 public:
     Texture(QOpenGLExtraFunctions* functions, const std::string& filepath);

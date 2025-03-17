@@ -1,7 +1,8 @@
 #include <QApplication>
 #include <QFontDatabase>
 
-#include "UI/MainWindow.h"
+#include "MainWindow.h"
+
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
     QFont globalFont("SourceCodeVF", 11);

@@ -158,8 +158,8 @@ void OpenGLWindow::mousePressEvent(QMouseEvent *event) {
 
 void OpenGLWindow::mouseMoveEvent(QMouseEvent *event) {
     if (isDragging) {
-        float xpos = static_cast<float>(event->x());
-        float ypos = static_cast<float>(event->y());
+        float xpos = static_cast<float>(event->position().x());
+        float ypos = static_cast<float>(event->position().y());
 
         if (firstMouse) {
             lastX = xpos;
