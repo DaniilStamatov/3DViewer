@@ -55,7 +55,7 @@ void OpenGLWindow::initializeGL() {
     functions->initializeOpenGLFunctions();
     this->makeCurrent();
     functions->glClearColor(0.3f, 0.4f, 0.5f, 1.0f);
-    lightShader = new Shader(functions, "shaders/light.shader");
+    lightShader = new Shader(functions, "/home/daniil/Documents/3DViewer/src/res/shaders/light.shader");
 
     float vertices[] = {-0.5f, -0.5f, -0.5f, 0.0f,  0.0f,  -1.0f, 0.5f,  -0.5f, -0.5f, 0.0f,  0.0f,  -1.0f,
                         0.5f,  0.5f,  -0.5f, 0.0f,  0.0f,  -1.0f, 0.5f,  0.5f,  -0.5f, 0.0f,  0.0f,  -1.0f,

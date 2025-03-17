@@ -1,7 +1,7 @@
 #include "ModelRenderer.h"
 
 ModelRenderer::ModelRenderer(QOpenGLExtraFunctions *functions, const s21::Loader &loader)
-    : m_shader(functions, "shaders/basic.shader"), m_texture(functions, "res/images/awesomeface.png") {
+    : m_shader(functions, "/home/daniil/Documents/3DViewer/src/res/shaders/basic.shader"), m_texture(functions, "/home/daniil/Documents/3DViewer/src/res/images/awesomeface.png") {
     m_transform = s21::Matrix4x4();
     m_linesColor = s21::Vector3(1.0, 0.5, 0.3);
     m_loader = loader;
