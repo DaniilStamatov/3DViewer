@@ -37,11 +37,12 @@ npm-debug.log
 yarn-error.log
 
 # CMake
-CMakeFiles/
-CMakeCache.txt
-Makefile
-cmake_install.cmake
-*.cmake
+build/CMakeFiles/
+build/CMakeCache.txt
+build/Makefile
+build/cmake_install.cmake
+build/*.cmake
+build/gmon.out
 
 # Другие временные файлы
 *.tmp

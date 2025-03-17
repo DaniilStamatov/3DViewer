@@ -1,5 +1,0 @@
-/home/daniil/Documents/3DViewer/src/build/CMakeFiles/3DViewer.dir
-/home/daniil/Documents/3DViewer/src/build/CMakeFiles/edit_cache.dir
-/home/daniil/Documents/3DViewer/src/build/CMakeFiles/rebuild_cache.dir
-/home/daniil/Documents/3DViewer/src/build/CMakeFiles/3DViewer_autogen_timestamp_deps.dir
-/home/daniil/Documents/3DViewer/src/build/CMakeFiles/3DViewer_autogen.dir
